@@ -1,0 +1,292 @@
+﻿h1
+{
+    background: url("images/h1.gif") repeat-x scroll left top transparent;
+    border-bottom: 1px solid #CECECE;
+    clear: both;
+    color: #000000;
+    font-family: 'Microsoft Yahei';
+    font-size: 20px;
+    font-weight: normal;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+}
+
+h1 > span.fr
+{
+    padding-right: 18px;
+    padding-top: 10px;
+}
+
+.ContentBox
+{
+    margin: 5px 15px 15px 15px;
+}
+.toolbar
+{
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #EFF2F4;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    font-family: Tahoma;
+    height: 40px;
+    border-top-color: #c1c1c1;
+    border-right-color: #c1c1c1;
+    border-left-color: #c1c1c1;
+}
+.toolbar a
+{
+    display: inline;
+    float: left;
+    margin-top: 6px;
+}
+.search
+{
+    font-family: Tahoma;
+    width: 260px;
+}
+.search label
+{
+    line-height: 40px;
+}
+.search-input
+{
+    background: url("images/button.png") no-repeat scroll left -272px #FFFFFF;
+    border: 1px solid #C8C8C8;
+    color: #444444;
+    height: 18px;
+    line-height: 18px;
+    margin-right: 3px;
+    margin-top: 10px;
+    padding-left: 20px;
+    vertical-align: middle;
+    width: 149px;
+}
+
+.search-btn
+{
+    background: url("images/button.png") no-repeat scroll left top transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    height: 19px;
+    margin-top: 12px;
+    overflow: hidden;
+    width: 40px;
+}
+a.add
+{
+    background: url("images/ad_system.gif") no-repeat scroll left top transparent;
+    display: inline-block;
+    float: left;
+    height: 26px;
+    overflow: hidden;
+    text-align: left;
+    width: 66px;
+}
+.table100
+{
+    width: 100%;
+}
+.table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    clear: both;
+    color: #444444;
+    font-family: Tahoma;
+    margin: 0 auto;
+}
+
+.table-label
+{
+    width: 110px;
+}
+.table th
+{
+    background: none repeat scroll 0 0 #EFEFEF;
+    border: 1px solid #DDDDDD;
+    color: black;
+    font-weight: normal;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 3px;
+    text-align: left;
+}
+.table th img
+{
+    vertical-align: middle;
+}
+.table th a
+{
+    vertical-align: middle;
+}
+.table td
+{
+    border: 1px solid #DDDDDD;
+    line-height: 18px;
+    padding: 4px 6px;
+}
+.table th a
+{
+    color: black;
+}
+.table th a:hover
+{
+    color: black;
+}
+.bgc-gray
+{
+    background: none repeat scroll 0 0 #EFF2F4;
+}
+a.asc
+{
+    background: url("images/order_up.png") no-repeat scroll right center transparent;
+    color: #316AC5;
+    display: inline-block;
+    padding-right: 13px;
+}
+
+a.desc
+{
+    background: url("images/order_down.png") no-repeat scroll right center transparent;
+    color: #316AC5;
+    display: inline-block;
+    padding-right: 13px;
+}
+
+/*分页.Begin*/ 
+.pages
+{
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url("images/page.gif") repeat-x scroll left top transparent;
+    border-color: #C1C1C1 #C1C1C1 #C1C1C1;
+    border-right: 1px solid #C1C1C1;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    clear: both;
+    color: #444444;
+    height: 27px;
+    padding-right: 10px;
+    text-align: right;
+    line-height:27px; 
+} 
+.pages input { width:40px; height:14px; margin:0 5px; _margin-top:3px; }
+.pages span { float:right; height:20px; line-height:20px; margin:3px 5px;}
+
+/*分页按钮样式*/
+/*公共*/
+a.p-first,a.p-prev,a.p-next,a.p-last,a.p-first-dis,a.p-prev-dis,a.p-next-dis,a.p-last-dis{ height:20px; float:right; margin:3px;}
+/*第一页*/
+a.p-first{ background:url(images/pagination.png) repeat-x; background-position:0px 0px; width:57px;}
+a.p-first:hover{ background:url(images/pagination.png) repeat-x; background-position:0px -31px; width:57px;}
+/*失效按钮样式*/
+a.p-first-dis{ background:url(images/pagination.png) repeat-x; background-position:0px -62px; width:57px; cursor:default;}
+/*上一页*/
+a.p-prev{ background:url(images/pagination.png) repeat-x; background-position:-67px 0px; width:63px;}
+a.p-prev:hover{ background:url(images/pagination.png) repeat-x; background-position:-67px -31px; width:63px;}
+/*失效按钮样式*/
+a.p-prev-dis{ background:url(images/pagination.png) repeat-x; background-position:-67px -62px; width:63px; cursor:default;}
+/*下一页*/
+a.p-next{ background:url(images/pagination.png) repeat-x; background-position:-140px 0px; width:63px;}
+a.p-next:hover{ background:url(images/pagination.png) repeat-x; background-position:-140px -31px; width:63px;}
+/*失效按钮样式*/
+a.p-next-dis{ background:url(images/pagination.png) repeat-x; background-position:-140px -62px; width:63px; cursor:default;}
+/*最后一页*/
+a.p-last{ background:url(images/pagination.png) repeat-x; background-position:-213px 0px; width:57px;}
+a.p-last:hover{ background:url(images/pagination.png) repeat-x; background-position:-213px -31px; width:57px;}
+/*失效按钮样式*/
+a.p-last-dis{ background:url(images/pagination.png) repeat-x; background-position:-213px -62px; width:57px; cursor:default;}
+
+
+/*分页.End */ 
+
+.width20
+{
+    width: 20px;
+}
+
+.width40
+{
+    width: 40px;
+}
+.width60
+{
+    width: 60px;
+}
+.width80
+{
+    width: 80px;
+}
+.width100
+{
+    width: 100px;
+}
+
+
+.width120
+{
+    width: 120px;
+}
+
+.width140
+{
+    width: 140px;
+}
+.width160
+{
+    width: 160px;
+}
+.width180
+{
+    width: 180px;
+}
+.width200
+{
+    width: 200px;
+}
+.width250
+{
+    width: 200px;
+}
+.op_area a.oper-search
+{
+    background: url("images/oper-icon.png") no-repeat scroll -260px -44px transparent;
+    padding-bottom: 1px;
+    padding-left: 18px;
+}
+.op_area a.open
+{
+    background-position: 0 -788px;
+}
+.op_area a.close
+{
+    background-position: 0 -822px;
+}
+.op_area a.edit
+{
+    background-position: 0 -155px;
+}
+.op_area a.del,.op_area a.delete
+{
+    background-position: 0 -188px;
+}
+.op_area a.op_add
+{
+    background-position: 0 -122px;
+}
+.op_area a
+{
+    background: url("images/icon-sprite.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    line-height: 16px;
+    padding-left: 18px;
+}

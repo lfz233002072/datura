@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/datura">
+  <Resource driverClassName="com.mysql.jdbc.Driver" maxActive="50" maxIdle="10" 
+            maxWait="6000" name="daturalink" password="" type="javax.sql.DataSource" 
+            url="jdbc:mysql://localhost:3306/datura?zeroDateTimeBehavior=convertToNull" 
+            username="root"/>
+</Context>

@@ -1,0 +1,308 @@
+/*布局 Begin*/
+framework-layout
+{
+    /*框架布局标记*/
+}
+/*布局 End*/
+
+/*网站头部 Begin*/
+.header
+{
+    background: url("images/header.gif") no-repeat scroll left top #4C637C;
+    border-bottom: 1px solid #2F4A67;
+    clear: both;
+    color: #FFFFFF;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    padding-right: 15px;
+    padding-top: 30px;
+    text-align: right;
+}
+.header a, .header span
+{
+    color: #FFFFFF;
+    padding: 0 6px;
+}
+.logo-bg
+{  left: 0;
+    position: absolute;
+    top: 0; 
+    height: 70px;
+    width: 570px;
+    }
+.logo
+{
+    left: 0;
+    position: absolute;
+    top: 0;
+    height: 58px;
+     width:298px;
+    background: url("images/logo.jpg") no-repeat scroll 0 0 transparent;
+}
+/*网站头部 End*/
+
+/*网站底部 Begin*/
+.footer
+{
+    background: url("images/foot.gif") repeat-x scroll left top transparent;
+    clear: both;
+    color: #FFFFFF;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+}
+/*网站底部 End*/
+
+/*头部导航条 Begin*/
+.framework-layout .tabs-header
+{
+    background: url("images/menu.png") repeat-x scroll left -66px transparent;
+    padding: 0px;
+    height: 29px;
+}
+.framework-layout .tabs-wrap
+{
+    height: 29px;
+}
+.framework-layout .tabs li
+{ 
+    float: left;
+    font-family: Tahoma;
+    font-weight: bold;
+    height: 26px;
+    line-height: 22px;
+    margin: 2px 0 0;
+    position: relative;
+   background: url("images/tab-item-left.PNG") no-repeat left,
+    url("images/tab-item-right.PNG") no-repeat right,
+    url("images/tab-item-center.PNG") repeat-x;
+    color: #555555;
+    cursor: default;
+    text-align: center;
+    border: 0 none; 
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='images/tab-item-right.PNG', sizingMethod='crop'); /* IE6-8 */
+ }
+
+.framework-layout .tabs li.tabs-selected
+{
+   background: url("images/tab-item-hover-left.PNG") no-repeat left,
+    url("images/tab-item-hover-right.PNG") no-repeat right,
+    url("images/tab-item-hover-center.PNG") repeat-x;
+    color: #FFFFFF;
+    border: 0 none; 
+}
+.framework-layout li.tabs-selected .tabs-title
+{
+    color: white;
+}
+
+.framework-layout li .tabs-title
+{
+    color: black;
+}
+.framework-layout .tabs li.tabs-selected a.tabs-inner, .framework-layout .tabs li.tabs-selected a.tabs-inner:hover, .framework-layout .tabs li a.tabs-inner, .framework-layout .tabs li a.tabs-inner:hover
+{
+    background: none;
+}
+
+.framework-layout .tabs li.tabs-selected a.tabs-close
+{
+    background: url("images/button.png") no-repeat scroll -67px -57px transparent;
+    cursor: pointer;
+    height: 13px;
+    position: absolute;
+    right: 16px;
+    top: 5px;
+    width: 13px;
+}
+.framework-layout .tabs li.tabs-selected a.tabs-close:hover
+{
+    background: url("images/button.png") no-repeat scroll -67px -76px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 13px;
+    margin-left: 4px;
+    width: 13px;
+}
+.framework-layout .tabs .tabs-icon
+{
+    left: 15px;
+    top: 4px;
+}
+.framework-layout .tabs .tabs-with-icon
+{
+    padding-left: 5px;
+}
+.framework-layout .tabs li a.tabs-close
+{
+    background: url("images/button.png") no-repeat scroll -67px -196px transparent;
+    cursor: pointer;
+    height: 13px;
+    position: absolute;
+    right: 16px;
+    top: 5px;
+    width: 13px;
+}
+.framework-layout .tabs li a.tabs-close:hover
+{
+    background: url("images/button.png") no-repeat scroll -67px -221px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 13px;
+    margin-left: 4px;
+    width: 13px;
+}
+.framework-layout .tabs-header .tabs-scroller-left
+{
+    background: url("images/control.gif") no-repeat scroll left -24px transparent;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin-top: 2px;
+    overflow: hidden;
+    width: 10px;
+    margin-left: 3px;
+    border: 0 none;
+    top: 1px;
+}
+.framework-layout .tabs-header .tabs-scroller-left:hover
+{
+    background: url(images/control.gif) left -49px no-repeat;
+    height: 18px;
+    width: 10px;
+    display: inline-block;
+}
+
+.framework-layout .tabs-header .tabs-scroller-right
+{
+    background: url("images/control.gif") no-repeat scroll left top transparent;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    height: 18px;
+    margin-top: 2px;
+    overflow: hidden;
+    width: 10px;
+    border: 0 none;
+    top: 1px;
+}
+.framework-layout .tabs-header .tabs-scroller-right:hover
+{
+    background: url(images/control.gif) left -73px no-repeat;
+    height: 18px;
+    width: 10px;
+}
+.framework-layout .tabs-header .tabs-tool
+{
+    background: none repeat scroll 0 0;
+    background-color:transparent;
+    border :0 none; 
+}
+
+.framework-layout .tabs-header .tabs-tool a.l-btn-plain:hover 
+{ 
+    background: none repeat scroll 0 0;
+    background-color:transparent;
+    border :0 none;  
+}
+.framework-layout .tabs-header .tabs-tool  a.l-btn span.l-btn-left
+{
+    padding:0px;
+    }
+/*头部导航条 End*/
+
+/*左侧菜单 Begin*/
+#framework_layout_west
+{
+    width: 210px;
+}
+.framework-layout > div.layout-expand
+{
+    border-right: 5px solid #61758B;
+}
+.framework-layout .layout-split-west > div.panel-header
+{
+    color: White;
+    background: url("images/menu.png") repeat-x scroll left -599px transparent;
+    border-right: 1px solid #586B80;
+    padding-left: 15px;
+    padding-top: 6px;
+    width: 23px;
+    border: 0 none;
+}
+.framework-layout .layout-split-west
+{
+    border-right: 5px solid #61758B;
+}
+
+.LeftMenu-Layout .layout-panel-south, .LeftMenu-Layout .layout-panel-south .panel-body
+{
+    display: block;
+}
+.LeftMenu-Layout .layout-panel-south .panel-body
+{
+}
+.LeftMenu-Layout .layout-blank
+{
+    display: inline-block;
+    height: 35px;
+    width: 12px;
+} 
+/*菜单按钮组*/ 
+.LeftMenu-Layout .layout-panel-south > div.panel-header
+{
+    color: White;
+    background: url("images/menu.png") repeat-x scroll left -599px transparent;
+    border-right: 1px solid #586B80;
+    padding-left: 15px;
+    padding-top: 6px;
+    width: 23px;
+    border: 0 none;
+ }
+.LeftMenu-Layout .LeftMenu-Layout-menu { margin:5px; margin-right:0;}
+.LeftMenu-Layout .LeftMenu-Layout-menu ul li {  height:50px; width:186px; background: url(images/menu-bg.gif) no-repeat left top; margin-bottom:3px; *margin-bottom:1px; padding:0 2px 5px 2px; }
+
+.LeftMenu-Layout .LeftMenu-Layout-menu li a {height:46px; width:62px; display:inline-block; float:left; text-align:center; margin:2px 0px 2px; font-size:12px; color:#1b4e08; }
+/*菜单按钮鼠标经过样式*/
+.LeftMenu-Layout .LeftMenu-Layout-menu li a:hover,.LeftMenu-Layout-menu li a.selected,.LeftMenu-Layout-menu a.selected:hover{background:url(images/menu-hover.gif) no-repeat; text-decoration:none; font-size:12px; color:#000000;}
+
+/*菜单按钮组 图标+文字*/ 
+.LeftMenu-Layout .LeftMenu-Layout-menu li a img{ display:block; width:24px; height:24px; margin:4px auto 0px; *margin:4px auto 3px;}
+.LeftMenu-Layout .LeftMenu-Layout-menu li span { display:inline-block; }
+
+/*树形菜单 .Begin*/ 
+
+/*一级节点   */ 
+.LeftMenu-Layout .tree 
+{  
+    }
+.LeftMenu-Layout .tree > li > div.tree-node
+{ 
+    font-weight:bold;   
+}   
+.LeftMenu-Layout .tree ul  .tree-node-selected
+{ 
+    background: url("images/menu.png") no-repeat scroll center -194px transparent;
+    color: #FFFFFF;
+    display: block; 
+} 
+ 
+.LeftMenu-Layout .tree-file  
+{
+    width:0px;
+}
+.LeftMenu-Layout .tree-node
+{    
+     height:23px;
+     line-height:23px;
+     padding-top:2px;
+}
+.LeftMenu-Layout .tree-folder { 
+    width:0px; 
+}
+
+/*树形菜单 .End*/ 
+
+/*左侧菜单 End*/

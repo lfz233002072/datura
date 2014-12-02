@@ -1,0 +1,31 @@
+﻿/*login*/
+#loginBody{background:#e9f4f8 url(images/login/login_rx_bg.jpg) repeat-x center top; overflow:hidden; padding:0; margin:0;}
+#loginPage{background:url(images/login/login_fixed_bg.jpg) no-repeat center top; overflow:hidden; }
+
+#loginArea{position:absolute; left:35%; top:20%; width:426px; height:305px; background:url(images/login/login_border_bg.png) no-repeat; font-size:12px;}
+
+#loginArea .login_skin{background:url(images/login/login_bg.jpg) no-repeat; width:414px; height:296px; margin:5px 0 0 6px;}
+#loginArea .hd{padding-top:76px; height:20px; text-align:center;}
+#loginArea .bd{height:200px;}
+#loginArea .bd .tf{margin-bottom:10px; clear:both; height:26px; line-height:26px;}
+#loginArea .bd .tf_vd{margin-bottom:7px; color:#666;}
+#loginArea .bd .tf_vd input{padding:0; border:none;}
+#loginArea .bd .tf_sb{height:auto; line-height:normal;}
+#loginArea .bd .tf label{float:left; width:100px; text-align:right; color:#333; }
+#loginArea .bd .tf input{width:229px; float:left; font:14px Arial, Helvetica, sans-serif; color:#333; margin-right:6px; border:1px solid #c7c5c5; padding:2px; line-height:26px; height:26px; vertical-align:middle;}
+#loginArea .bd .tf input.cur{background:#faffe4; border-color:#ffcdaa;}
+#loginArea .bd .tf input.vd{width:60px;}
+#loginArea .bd .tf input.rp{border:none; width:auto;}
+#loginArea .submitBtn
+{
+    border-style: none;
+    border-width: 0px;
+    border-color: inherit;
+    background: url(images/login/login_submit_btn.png) no-repeat;
+    width: 90px;
+    height: 39px;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -999em;
+}
+#loginArea .submitBtn:hover{background-position:-90px 0;}

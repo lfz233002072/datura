@@ -1,0 +1,80 @@
+﻿
+body
+{
+    font-family: Arial;
+    font-size: 12px;
+}
+a
+{
+    color: #444444;
+    cursor: pointer;
+    text-decoration: none;
+    outline: medium none;
+}
+a:link
+{
+    color: #333333;
+    font-size: 12px;
+    text-decoration: none;
+}
+ul, li, ol, dl, dt, dl
+{
+    list-style: none outside none;
+}
+
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, tr
+{
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+.fr
+{
+    float: right;
+}
+
+.fl
+{
+    float: left;
+}
+
+.gray
+{
+    color: #888888;
+}
+.hide
+{
+    display: none;
+}
+
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color: Red;
+}
+
+.text-indent20
+{
+    text-indent: 20px;
+}
+
+.text-indent40
+{
+    text-indent: 40px;
+}
+.text-bold
+{
+    font-weight: bold;
+    color: Black;
+}
+
+.text-center{ text-align: center;}
+.text-left{ text-align: left;}
+.text-right{ text-align: right;}

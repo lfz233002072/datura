@@ -1,0 +1,456 @@
+/*网站布局 */
+framework-layout
+{
+}
+/*网站头部 Begin*/
+.header
+{
+    background: url(images/header-bg.jpg) repeat scroll 0 0 transparent;
+    clear: both;
+    color: #333333;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    padding-right: 15px;
+    padding-top: 42px;
+    text-align: right;
+    font: 12px tahoma,Verdana,Arial,sans-serif, "Times New Roman" ,宋体;
+}
+
+/*网站底部 End*/
+
+/*头部导航条 Begin*/
+.header a, .header span
+{
+    color: #333333;
+    padding: 0 6px;
+}
+
+.framework-layout .layout-panel-north .logo-bg
+{
+    left: 0;
+    position: absolute;
+    top: 0;
+    background: url(images/logo-bg.jpg) repeat scroll 0 0 transparent;
+    height: 70px;
+    width: 570px;
+}
+
+.framework-layout .layout-panel-north .logo-bg .logo
+{
+    left: 0;
+    position: absolute;
+    top: 0;
+    height: 46px;
+    width: 172px;
+    background: url(images/logo.jpg) no-repeat scroll 0 0 transparent;
+    margin: 10px 0 0 15px;
+}
+
+/*网站头部 End*/
+
+/*网站底部 Begin*/
+.footer
+{
+    background: url(images/footer-bg.jpg) repeat-x scroll left top transparent;
+    clear: both;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.framework-layout .tabs-header
+{
+    background: url(images/tab-bg.jpg) repeat-x scroll left top transparent;
+    border-top: 1px solid #8ACC9E;
+    height: 34px;
+    padding: 0;
+}
+
+.framework-layout .tabs li
+{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 30px;
+    border-left: 0 none;
+    border-top: 0 none;
+    border-bottom: 0 none;
+    margin-bottom: 0;
+    margin-top: 3px;
+    margin-right: 0;
+    border-right: 1px solid #90CFA4;
+}
+
+.framework-layout .tabs-panels .panel-body
+{
+    overflow: hidden;
+}
+
+.framework-layout .tabs li.tabs-selected
+{
+    background: #FFFFFF none no-repeat scroll 0 0;
+    border-left: 1px solid #90CFA4;
+    border-top: 1px solid #90CFA4;
+}
+
+.framework-layout .tabs li.tabs-selected a.tabs-inner, .framework-layout .tabs li.tabs-selected a.tabs-inner:hover, .framework-layout .tabs li a.tabs-inner, .framework-layout .tabs li a.tabs-inner:hover
+{
+    background: none;
+}
+
+.framework-layout .tabs li.tabs-selected a.tabs-close
+{
+    background: url(images/button.png) no-repeat scroll -67px -57px transparent;
+    cursor: pointer;
+    height: 13px;
+    position: absolute;
+    top: 5px;
+    width: 13px;
+}
+
+.framework-layout .tabs li.tabs-selected a.tabs-close:hover
+{
+    background: url(images/button.png) no-repeat scroll -67px -76px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 13px;
+    margin-left: 1px;
+    width: 13px;
+}
+
+.framework-layout .tabs .tabs-icon
+{
+    top: 4px;
+}
+.framework-layout .tabs .tabs-with-icon
+{
+}
+
+.framework-layout .tabs .tabs-inner .tabs-closable
+{
+    padding-right: 13px;
+}
+
+.framework-layout .tabs li a.tabs-close
+{
+    background: url(images/button.png) no-repeat scroll -67px -196px transparent;
+    cursor: pointer;
+    height: 13px;
+    position: absolute;
+    top: 5px;
+    width: 13px;
+}
+
+.framework-layout .tabs li a.tabs-close:hover
+{
+    background: url(images/button.png) no-repeat scroll -67px -221px transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 13px;
+    margin-left: 4px;
+    width: 13px;
+}
+
+.framework-layout .tabs-header .tabs-scroller-left
+{
+    background: url(images/control.gif) no-repeat scroll left -24px transparent;
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    height: 18px;
+    margin-top: 2px;
+    overflow: hidden;
+    width: 10px;
+    margin-left: 3px;
+    border: 0 none;
+    top: 6px;
+}
+
+.framework-layout .tabs-header .tabs-scroller-left:hover
+{
+    background: url(images/control.gif) left -49px no-repeat;
+    height: 18px;
+    width: 10px;
+    display: inline-block;
+}
+
+.framework-layout .tabs-header .tabs-scroller-right
+{
+    background: url(images/control.gif) no-repeat scroll left top transparent;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    height: 18px;
+    margin-top: 2px;
+    overflow: hidden;
+    width: 10px;
+    border: 0 none;
+    top: 6px;
+}
+
+.framework-layout .tabs-header .tabs-scroller-right:hover
+{
+    background: url(images/control.gif) left -73px no-repeat;
+    height: 18px;
+    width: 10px;
+}
+
+.framework-layout .tabs-header .tabs-tool
+{
+    background: none repeat scroll 0 0;
+    background-color: transparent;
+    border: 0 none;
+    margin-top: 6px;
+}
+
+.framework-layout .tabs-header .tabs-tool a.l-btn-plain:hover
+{
+    background: none repeat scroll 0 0;
+    background-color: transparent;
+    border: 0 none;
+}
+
+.framework-layout .tabs-header .tabs-tool a.l-btn span.l-btn-left
+{
+    padding: 0;
+}
+/*头部导航条 End*/
+
+/*左侧菜单 Begin*/
+#framework_layout_west
+{
+    width: 201px;
+    border: 0px none #E6F5EA;
+}
+#framework_layout_west > div > div
+{
+    border: 0px none #E6F5EA;
+}
+.framework-layout > div.layout-expand
+{
+    border-right: 5px solid #A8D2B2;
+    border-left: 0px none #A8D2B2;
+}
+
+.framework-layout .layout-panel-west > div.panel-header
+{
+    background: url("images/title.gif") no-repeat scroll left top transparent;
+    border-left: 1px solid #8FCEA2;
+    border-right: 1px solid #8FCEA2;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    margin: 0 0 0 5px;
+    text-indent: 22px;
+    width: 183px;
+    padding: 0; 
+    border-width: 0 0 0;
+}
+
+.framework-layout .layout-panel-west > div.panel-header>div.panel-title
+{
+    color:Black;
+    }
+    
+.framework-layout .layout-panel-west > div.panel-header>div.panel-tool a
+ {    padding-right: 5px;
+      margin-top:5px;
+}
+
+.framework-layout .layout-panel-west
+{
+    padding: 0px 5px 0px 0px;
+    background: url("images/nav.jpg") repeat-x scroll left top #E6F5EA;
+    border-right: 1px solid #A8D2B2;
+    height: 100%;
+}
+.framework-layout .layout-panel-west .layout-body
+{
+    background-color: #E6F5EA;
+    border-style: none;
+    border-width: 0 0 0;
+}
+
+.LeftMenu-Layout .layout-panel-south, .LeftMenu-Layout .layout-panel-south .panel-body
+{
+    display: block;
+}
+
+.LeftMenu-Layout .layout-blank
+{
+    display: inline-block;
+    height: 30px;
+    width: 12px;
+}
+
+/*菜单按钮组*/
+.LeftMenu-Layout .layout-panel-south > div.panel-header
+{
+    background: url("images/open-menu.gif") no-repeat scroll 0 0 transparent;
+    color: #1B4E08;
+    display: block;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 0 0 5px;
+    text-indent: 62px;
+    width: 190px;
+    padding: 0;
+    border-width: 0 0 0;
+}
+.LeftMenu-Layout .layout-panel-south > div.panel-header > div.panel-title
+{
+    height: 30px;
+    line-height: 30px;
+    text-indent: 62px;
+    width: 190px; 
+    position: relative;
+}
+ 
+.LeftMenu-Layout .layout-panel-south > div.panel-header > div.panel-tool
+{
+    height: 30px;
+    line-height: 30px;
+    text-indent: 0;
+    width: 190px;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+.LeftMenu-Layout .layout-panel-south > div.panel-header > div.panel-tool a
+{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    opacity: 0.1; 
+    margin-left: 0;
+    width: 100%;
+}
+
+
+.LeftMenu-Layout .layout-panel-south > div.panel-header > div.panel-tool a:hover
+{
+    background: url("images/open-menu-hover.gif") no-repeat scroll 0 0 transparent;
+    color: #1B4E08;
+    opacity: 0.2; 
+} 
+
+.LeftMenu-Layout .LeftMenu-Layout-menu
+{
+    margin: 5px 0 5px 5px;
+}
+
+.LeftMenu-Layout .LeftMenu-Layout-menu ul li
+{
+    height: 50px;
+    width: 186px;
+    background: url(images/menu-bg.gif) no-repeat left top;
+    margin-bottom: 1px;
+    padding: 0 2px;
+    padding-bottom: 5px;
+}
+
+.LeftMenu-Layout .LeftMenu-Layout-menu li a
+{
+    height: 46px;
+    width: 62px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    color: #1b4e08;
+    margin: 2px 0;
+}
+
+.LeftMenu-Layout .LeftMenu-Layout-menu li a:hover, .LeftMenu-Layout-menu li a.selected, .LeftMenu-Layout-menu a.selected:hover
+{
+    background: url(images/menu-hover.gif) no-repeat;
+    text-decoration: none;
+    font-size: 12px;
+    color: #000000;
+}
+
+.LeftMenu-Layout .LeftMenu-Layout-menu li a img
+{
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 4px auto 3px;
+}
+
+.LeftMenu-Layout .LeftMenu-Layout-menu li span
+{
+    display: inline-block;
+}
+
+.LeftMenu-Layout .layout-panel-south
+{
+}
+
+  
+.LeftMenu-Layout .layout-expand  
+{ 
+    width: 190px; 
+} 
+
+/*树形菜单 .Begin*/
+
+/*一级节点   */
+.tree {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    border-color: #8FCEA2 #8FCEA2 #8FCEA2;
+    border-right: 1px solid #8FCEA2;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    margin: 0 0 0 5px;
+    overflow-y: scroll;
+    width: 188px;
+    height:99%;
+}
+.tree {
+}
+.tree ul {
+}
+.tree ul li a {
+    background: url("images/root.jpg") repeat scroll 0 0 transparent;
+    display: block;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 38px;
+}
+.tree ul li a:hover {
+    background: url("images/root-hover.jpg") repeat scroll 0 0 transparent;
+    text-decoration: none;
+}
+.tree ul li a.selected {
+    background: url("images/root-selected.jpg") repeat scroll 0 0 transparent;
+}
+.tree ul li ul li a {
+    background: url("images/subnav.jpg") repeat scroll 0 0 transparent;
+    font-weight: normal;
+    padding-left: 48px;
+}
+.tree ul li ul li a:hover, .tree ul li ul li a.selected {
+    background: url("images/subnav-hover.jpg") repeat scroll 0 0 transparent;
+    color: #69BD3B;
+}
+/*树形菜单 .End*/
+
+/*左侧菜单 End*/ 
+.framework-layout .tabs-wrap, .framework-layout .tabs
+{
+    height: 34px;
+}
+
+.framework-layout li.tabs-selected .tabs-title, .framework-layout li .tabs-title
+{
+    color: black;
+} 
