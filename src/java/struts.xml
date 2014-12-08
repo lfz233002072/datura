@@ -24,7 +24,7 @@
         <action name="error" class="datura.controllers.ErrorAction">
             <result name="success">/404.jsp</result>
         </action>   
-        <action name="login" class="datura.controllers.LoginAction">
+        <action name="login"  class="datura.controllers.LoginAction">
             <result name="success">/admin/index</result>
             <result name="login">/login.jsp</result>
         </action>   

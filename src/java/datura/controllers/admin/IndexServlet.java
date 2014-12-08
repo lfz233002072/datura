@@ -57,5 +57,11 @@ public class IndexServlet extends AdminServletBase {
         req.setAttribute("indexModel", indexModel); 
         this.RenderView(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doPost(req, resp); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
 }

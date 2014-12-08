@@ -27,7 +27,7 @@ public class LoginAction extends ActionSupport {
 
     @Override
     public String execute() {
-        return LOGIN;
+        return SUCCESS;
     }
 
     public String login() {
