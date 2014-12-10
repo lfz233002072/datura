@@ -31,7 +31,7 @@ if(obj!=null) title=obj.toString();
     </head>
     <body id="loginBody">
         <div id="loginPage"> 
-            <form action="login.do" method="post">
+            <form action="<%=path%>/login" method="post">
                 <div id="loginArea">
                     <div class="login_skin">
                         <div class="hd" style='background: url("")'>
