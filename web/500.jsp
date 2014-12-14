@@ -4,7 +4,7 @@
     Author     : lfz
 --%>
 <%@page contentType="text/html" isErrorPage="true" pageEncoding="UTF-8"%>
-<%@include  file="/admin/header.jsp" %>
+<%@include  file="/administrator/header.jsp" %>
 
 <table width="100%" style="padding-top: 25px;padding-left: 25px"> 
     <tr>
@@ -47,4 +47,4 @@
     </tr>
 </table>
 
-<%@include  file="/admin/footer.jsp" %>
+<%@include  file="/administrator/footer.jsp" %>

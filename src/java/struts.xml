@@ -1,40 +1,48 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
-	"http://struts.apache.org/dtds/struts-2.3.dtd">
-
-<struts> 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>  
+    <include file="struts-default.xml"/>
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="true" /> 
-    <constant name="struts.action.extension" value="do,action"/>
-    <package name="default" namespace="/" extends="struts-default">
-        <default-action-ref name="index" />
-        <global-results>
-            <result name="error">/500.jsp</result>
-        </global-results>
-        <global-exception-mappings>
-            <exception-mapping exception="java.lang.Exception" result="error"/>
-        </global-exception-mappings>
-        <action name="index">
-            <result type="redirectAction">
-                <param name="actionName">error</param>
-                <param name="namespace">/</param>
+    <constant name="struts.action.extension" value="do"/>
+    <!--不受权限控制的Action请求配置-->
+    <package name="non-authority" namespace="/" extends="struts-default" >		
+        <action name="login" class="datura.actions.LoginAction">
+            <result name="input">/login.jsp</result>
+            <result name="error">/500.jsp</result> 
+            <result name="success" type="redirectAction">
+                <param name="namespace">/administrator</param>
+                <param name="actionName">index</param>
             </result>
-        </action>
-        <action name="error" class="datura.controllers.ErrorAction">
-            <result name="success">/404.jsp</result>
-        </action>   
-        <action name="login"  class="datura.controllers.LoginAction">
-            <result name="success">/admin/index</result>
+        </action>		
+        <action name="error" class="datura.actions.LoginAction">
+            <result name="success">/500.jsp</result>
+        </action> 
+    </package> 
+    <!--受权限控制的Action请求配置-->
+    <package name="authority" extends="struts-default" namespace="/administrator">
+        <interceptors>
+            <!--定义一个名为authority的拦截器-->
+            <interceptor
+                class="datura.security.AuthorityInterceptor"
+                name="authority"/>
+            <!--定义一个包含权限检查的拦截器栈-->
+            <interceptor-stack name="mydefault">
+                <!--配置内建默认拦截器-->
+                <interceptor-ref name="defaultStack"/>
+                <!--配置自定义的拦截器-->
+                <interceptor-ref name="authority"/>
+            </interceptor-stack>
+        </interceptors> 
+        <default-interceptor-ref name="mydefault" />
+        <!--定义全局Result-->
+        <global-results>
             <result name="login">/login.jsp</result>
-        </action>   
-        <action name="logout" class="datura.controllers.LoginAction">
-            <result name="success">/admin/index</result>
-        </action>          
+            <result name="error">/500.jsp</result> 
+        </global-results>
+        <action name="index" class="datura.actions.admin.IndexAction"> 
+            <result name="success">/administrator/index.jsp</result>
+        </action>
     </package>
-
-    <!--<include file="example.xml"/>-->
-
-    <!-- Add packages here -->
-
 </struts>

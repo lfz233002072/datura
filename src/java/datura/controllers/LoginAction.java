@@ -20,7 +20,7 @@ import org.apache.struts2.convention.annotation.Results;
  *
  * @author lfz
  */
-public class LoginAction extends ActionSupport {
+ class LoginAction extends ActionSupport {
 
     private String username;
     private String password;

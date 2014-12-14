@@ -1,0 +1,394 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-12-10, 16:56:56
+    Author     : Administrator
+*/
+/*css reset*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body
+{
+    letter-spacing: 1px;
+    font-family: Arial,"宋体";
+}
+
+ol, ul
+{
+    list-style: none;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+caption, th, td
+{
+    font-weight: normal;
+}
+
+blockquote:before, blockquote:after, q:before, q:after
+{
+    content: '';
+}
+
+blockquote, q
+{
+    quotes: """";
+}
+
+a
+{
+    text-decoration: none;
+}
+
+    a:hover
+    {
+        text-decoration: none;
+    }
+
+input
+{
+    vertical-align: middle;
+    outline: none;
+}
+
+img
+{
+    border: none;
+    vertical-align: middle;
+}
+
+body
+{
+    font-size: 12px;
+    text-align: center;
+}
+
+/************************* 页面头部.Begin ********************************************/
+
+.header
+{
+    text-align: left;
+    color: #d1d7e3;
+    height: 78px;
+    display: block;
+    background: url(../images/head_bg.gif) repeat-x;
+}
+
+    .header .logo
+    {
+        height: 36px;
+        width: 480px;
+        background: url(../images/logo.gif) no-repeat;
+        float: left;
+        margin: 10px 0 0 10px;
+    }
+
+    .header .help
+    {
+        float: right;
+        margin: 28px 18px 0 0;
+        color: white;
+    }
+
+    .header h1
+    {
+        font-size: 200%;
+        color: #333;
+        margin-top: 30px;
+    }
+
+    .header p
+    {
+        font-size: 14px;
+    }
+
+    .header .topinfo
+    {
+        float: right;
+        margin: 18px 18px 0 0;
+        color: #d1d7e3;
+    }
+
+        .header .topinfo a
+        {
+            color: #d1d7e3;
+            cursor: pointer;
+        }
+
+
+/************************* 页面头部.End ********************************************/
+
+/************************* 页面头部菜单.Begin ********************************************/
+#nav
+{
+    background: url(../images/nav_bg.gif) repeat-x;
+    padding: 0 10px 0 10px;
+    line-height: 28px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    margin: 0;
+    width: 100%;
+}
+
+    #nav li
+    {
+        float: left;
+        background: url(../images/nav_line.gif) right center no-repeat;
+        position: relative;
+    }
+
+        #nav li a
+        {
+            display: block;
+            padding: 0 15px;
+            color: #f1f3f7;
+            font-size: 14px;
+        }
+
+            #nav li a:hover, #nav li a.hover
+            {
+                background: url(../images/nav_hover_bg.gif) repeat-x;
+                text-decoration: none;
+            }
+
+/************************* 页面头部菜单.End ********************************************/
+
+/************************* 左侧菜单.Begin ********************************************/
+
+.left-menu
+{
+    width: 155px;
+    position: absolute;
+    top: 28px;
+    left: 0;
+    background: #f7f9fb;
+    border-right: 1px solid #e5e5e5;
+}
+
+    .left-menu > ul
+    {
+        margin-top: 15px;
+    }
+
+    .left-menu dt
+    {
+        border-bottom: 1px solid #e6e6e6;
+        height: 30px;
+        line-height: 30px;
+    }
+
+        .left-menu dt a
+        {
+            display: block;
+            padding-left: 25px;
+            color: #333;
+        }
+
+            .left-menu dt a span
+            {
+                float: right;
+                background: url(../images/btnIcon.png) no-repeat -143px -62px;
+                width: 16px;
+                height: 7px;
+                display: inline-block;
+                margin: 10px 5px 0 0;
+            }
+
+            .left-menu dt a:hover, .left-menu dt a.hover, .left-menu dd a:hover, .left-menu dd a.hover
+            {
+                background: #6392ce;
+                color: #fff;
+                text-decoration: none;
+            }
+
+    .left-menu dd
+    {
+        height: 28px;
+        line-height: 28px;
+        display: none;
+    }
+
+        .left-menu dd a
+        {
+            display: block;
+            padding-left: 30px;
+            color: #0066cc;
+        }
+
+        .left-menu dd img
+        {
+            margin-right: 5px;
+        }
+
+.bb6
+{
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.layout-panel-west .panel-header .panel-title
+{
+    text-align: center;
+}
+
+/************************* 左侧菜单.End ********************************************/
+
+/************************* 登录界面.Begin ********************************************/
+
+#loginwrapper
+{
+    margin: 0 auto;
+    display: block;
+}
+
+    #loginwrapper .title
+    {
+        font-size: 24px;
+        margin-bottom: 15px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    #loginwrapper .login
+    {
+        border: 1px solid #d4d4d4;
+        background: #f3f3f3;
+        width: 345px;
+        color: #666;
+        padding: 20px 30px 20px 30px;
+        display: block;
+        text-align: left;
+    }
+
+        #loginwrapper .login > div
+        {
+            line-height: 24px;
+            margin: 10px 0;
+        }
+
+        #loginwrapper .login .lines input:not([type="checkbox"])
+        {
+            height: 32px;
+            width: 220px;
+        }
+
+        #loginwrapper .login .lines input.verifycode
+        {
+            width: 120px;
+            margin-right: 8px;
+        }
+
+        #loginwrapper .login .lines > img
+        {
+            width: 95px;
+            height: 33px;
+            border: 1px;
+        }
+
+    #loginwrapper .button input
+    {
+        width: 108px;
+    }
+
+/************************* 登录界面.End ********************************************/
+
+
+/************************* 页面底部.Begin ********************************************/
+.footer
+{
+    background: url(../images/footer_bg.gif) repeat-x scroll left top transparent;
+    clear: both;
+    text-align: center;
+    height: 21px;
+    line-height: 21px;
+    padding: 2px 0 4px 0;
+    color: #2d7de8;
+    overflow: hidden;
+}
+
+/************************* 页面底部.End ********************************************/
+
+
+/************************* 内容框架.Begin ********************************************/
+
+#frameworkTabs div.tabs-panels div.panel-body-noborder
+{
+    overflow: hidden;
+}
+
+/************************* 内容框架.End ********************************************/
+
+
+/************************* 加载中.Begin ********************************************/
+.loading
+{
+    background: url("../images/waiting.gif") no-repeat 10px 8px #ffffff;
+    height: 32px;
+    line-height: 32px;
+    width: 75px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid #3E5C9B;
+    padding-left: 35px;
+}
+
+.loading-ui-widget-overlay
+{
+    text-align: center !important;
+    background: url("../images/ui-bg_flat_0_aaaaaa_40x100.png") repeat-x scroll 50% 50% #AAAAAA;
+    opacity: 0.3;
+    filter: Alpha(Opacity=30);
+}
+
+.loading-ui-widget-overlay
+{
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/************************* 加载中.End ********************************************/
+
+
+#wrap
+{
+    padding: 20px 20px 0;
+    text-align: left;
+    background: #fff;
+    min-height: 247px;
+}
+
+.panel-block {
+height: 208px;
+overflow: auto;
+padding: 0;
+}.panel-block.dynamic {
+height: 435px;
+}
+
+ .progressbar {
+display: inline-block;
+height: 16px;
+background: #229f24;
+position: relative;
+top: 1px;
+}

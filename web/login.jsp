@@ -1,154 +1,122 @@
 <%-- 
     Document   : login
-    Created on : 2014-11-11, 20:04:30
+    Created on : 2014-12-14, 13:15:06
     Author     : lfz
---%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    String path = request.getContextPath();
-    Object message =  request.getAttribute("loginErrorMsg");
-    String errorMessage="";
-    if(message!=null){
-        errorMessage =message.toString();
-    }
-    
-Object obj =request.getAttribute("ServletTitle");
-String title ="";
-if(obj!=null) title=obj.toString(); 
-%>
-<html xmlns="http://www.w3.org/1999/xhtml"  lang="zh-cn">
+--%> 
+<%@page contentType="text/html" language="java"  pageEncoding="UTF-8"%> 
+<%@taglib prefix="s" uri="/struts-tags"%> 
+<% String path = request.getContextPath();%>
+<!DOCTYPE html>
+<html lang="zh-cn">
     <head lang="zh-cn">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>${title} </title>
-        <link href="<%=path%>/content/Site.css" rel="stylesheet" type="text/css" />
-        <link href="<%=path%>/content/Login.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript">
-            if (self.location != top.location) {
-                top.location.href = self.location.href;
-            }
-        </script>
-        <link href="<%=path%>/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta charset="UTF-8">
+        <title><s:text name="sitename" /></title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=1">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="alternate icon" type="image/gif" href="<%=path%>/assets/images/logo.gif">
+        <link rel="stylesheet" href="<%=path%>/assets/css/default.css"/>
+        <link rel="stylesheet" href="<%=path%>/assets/css/zui-1.2.0/css/zui.min.css"/>
+        <script src="<%=path%>/assets/js/jquery-1.10.2.min.js"></script>
+        <script src="<%=path%>/assets/js/jquery.validate.js"></script>
+        <script src="<%=path%>/assets/js/jquery.unobtrusive-ajax.min.js"></script>
+        <script src="<%=path%>/assets/js/jquery.validate.unobtrusive.js"></script>
+        <script src="<%=path%>/assets/js/zui-1.2.0/js/zui.min.js"></script>
+        <!--[if lt IE 9]>
+      <script src="<%=path%>/assets/js/zui-1.2.0/lib/ieonly/html5shiv.js"></script>
+      <script src="<%=path%>/assets/js/zui-1.2.0/lib/ieonly/respond.js"></script>
+      <![endif]-->
     </head>
-    <body id="loginBody">
-        <div id="loginPage"> 
-            <form action="<%=path%>/login" method="post">
-                <div id="loginArea">
-                    <div class="login_skin">
-                        <div class="hd" style='background: url("")'>
-                            <span class="error" id="spErrorMsg">
-                                <%=  errorMessage %>
-                            </span>
+    <body>
+        <!--[if lt IE 8]>
+            <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+        <![endif]--> 
+        <noscript>
+        <div style="position: absolute; z-index: 10000; height: 2046px; top: 0px; left: 0px; width: 100%; background: white; text-align: center;">
+            <img alt="抱歉，请开启脚本支持！" src="<%=path%>/assets/images/noscript.gif"/>
+        </div>
+        </noscript>
+        <div class="header">
+            <div class="logo"></div>
+            <a class="help" href="#">帮助</a>
+        </div>
+
+        <div class="panel panel-block col-md-7">
+            <div class='panel-heading'>登录</div>
+            <div class="panel-body"> 
+                <s:form action="login" > 
+                    <s:textfield name="username"   label="%{getText('user')}"></s:textfield> 
+                    <s:textfield name="password" label="%{getText('pass')}"></s:textfield>
+                    <s:submit value="%{getText('login')}"></s:submit>  
+                </s:form>
+            </div>
+        </div>
+        <div class="container">
+            <div class=" row">
+                <div id="loginwrapper" class="col-md-5">
+                    <h2 class="title"> 
+                        <s:text name="loginPage" />
+                    </h2>
+                    <form id="logi2n" name="logi2n" action="<%=path%>/login.action" method="post">
+                        <div class="login panel">
+                            用户名：
+                            <div class="lines input-group">
+                                <span class="input-group-addon"><i class="icon-user"></i></span> 
+                                <input type="text" name="username" class="form-control" data-ajax=true/>
+                            </div>
+                            <div class="text-danger">
+                                <span for="username">  </span>
+                            </div>
+                            密&nbsp; 码：
+                            <div class="lines  input-group">
+                                <span class="input-group-addon"><i class="icon-key"></i></span>  
+                                <input type="password" name="password" class="form-control" data-ajax=true/>
+                            </div>
+                            <div class="text-danger">
+                                <span> aaaa </span>
+                            </div>
+                            验证码：
+                            <div class="lines input-group">
+                                <span class="input-group-addon"><i class="icon-qrcode"></i></span>  
+                                <input type="text" name="CheckCode" class="verifycode" data-ajax=true/>
+                                <img id="imgcheck"
+                                     onclick="this.src = '/Account/VerifyImage?time=' + Math.random()"
+                                     title="看不清楚，双击图片换一张。" alt="验证码" />
+                            </div>
+                            <div class="text-danger">
+
+                            </div>
+                            <div class="text-danger" id="divErrorMessage">
+
+                            </div>
+                            <div class="button">
+                                <input class="btn btn-default" type="submit" value="登录">
+                                <input class="btn btn-default" style="margin-left: 30px" type="button" value="CA登录">
+
+                            </div>
                         </div>
-                        <div class="bd" >
-                            <div class="tf">
-                                <label>UserName:</label> 
-                                <input id="UserName" class = "input_off" name="UserName" value="InternalAdmin" onfocus = "this.className = 'input_on'" onblur = "this.className = 'input_off'" />
-                            </div>
-                            <div class="tf">
-                                <label>Password:</label>
-                                <input id="Password" type="password" value="123456" class = "input_off" name="Password" onfocus = "this.className = 'input_on'" onblur = "this.className = 'input_off'" />
-                            </div>
-                            <div class="tf tf_vd">
-                                <label for="">
-                                    &nbsp;</label>
-                                <input id  ="RememberMe" type="checkbox" name="RememberMe" value="ON" class="rp" /> 
-                                <label for="RememberMe" style = "text-align:left">RememberMe</label> 
-                            </div>
-                            <div class="tf tf_sb">
-                                <label for="">
-                                    &nbsp;</label>
-                                <button type="submit" class="submitBtn">
-                                </button>
-                            </div>
+                    </form>
+                </div>
+                <div class="col-md-7">
+                    <div class="article">
+                        <div class="article-content">
+                            <h2>会员须知</h2>
+                            <p style="text-align: left; display: inline-block">&nbsp;&nbsp;会员资格任何企业,团体，在接受通过本系统得资格审核后方可获...会员申请可在线申请，线下申请两种，用户在申请本系统会员时必须填写..</p>
                         </div>
                     </div>
                 </div>
-                <div style="display: none"> 
-                                <%=  errorMessage %>
-                </div>
-            </form>
-        </div> 
+            </div>
+        </div>
         <script type="text/javascript">
-        if (self.location != top.location) {
-            top.location.href = self.location.href;
-        }
-            function addEvent(el, evtType, handler) {
-                if (typeof el === 'string') {
-                    var d = handler;
-                    handler = function () {
-                        eval(d);
-                    };
-                }
-                if (el.addEventListener) {
-                    if (evtType == 'mousewheel')
-                        evtType = 'DOMMouseScroll';
-                    el.addEventListener(evtType, handler, false);
-                    return true;
-                } else
-                    return el.attachEvent ? el.attachEvent('on' + evtType, handler) : false;
+            //document.getElementById('imgcheck').src = '/Account/VerifyImage?time=' + Math.random();
+            //document.getElementById('CheckCode').value = "";
+
+            function hideErrorMessage() {
+                $("#divErrorMessage").html("");
             }
-            function __each(els, fn) {
-                for (var i = 0; i < els.length; i++) {
-                    fn(els[i], i);
-                }
-            }
-            function __hasClass(el, _class) {
-                if (el.className != _class)
-                    return false;
-                return el.className != el.className.replace(new RegExp('\\b' + _class + '\\b'), '');
-            }
-            function __addClass(el, _class) {
-                if (el.className) {
-                    el.className += ' ' + _class;
-                } else {
-                    el.className = _class;
-                }
-            }
-            function __removeClass(els, _class) {
-                if (els.length) {
-                    els && __each(els, function (el) {
-                        el.className = el.className.replace(new RegExp('\\b' + _class + '\\b'), '');
-                    });
-                } else {
-                    els.className = els.className.replace(new RegExp('\\b' + _class + '\\b'), '');
-                }
-            }
-            function winHeight() {
-                var a = document.documentElement;
-                return self.innerHeight || a && a.clientHeight || document.body.clientHeight;
-            }
-            (function () {
-                var input = document.getElementById('loginArea').getElementsByTagName('input');
-                var loginPage = document.getElementById('loginPage');
-                input[0].focus();
-                input[0].className = 'cur';
-                __each(input, function (el, i) {
-                    addEvent(el, 'focus', function (e) {
-                        __removeClass(input, 'cur');
-                        __addClass(el, 'cur');
-                    });
-                    addEvent(el, 'blur', function (e) {
-                        __removeClass(input, 'cur');
-                    });
-                });
-                function _resize() {
-                    var w_height = winHeight();
-                    loginPage.style['height'] = w_height + 'px';
-                }
-                addEvent(window, 'resize', _resize);
-                _resize();
-            })();
         </script>
-        <style>
-            html
-            {
-                _overflow-x: hidden;
-                overflow-y: auto;
-            }
-            body
-            {
-                overflow: visible;
-            }
-        </style>
     </body>
 </html>

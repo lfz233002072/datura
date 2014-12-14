@@ -4,7 +4,6 @@
     Author     : lfz
 --%>
 
-<%@page import="utils.Counter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +14,7 @@
     <body>
         <h1>Hello World!</h1>
         <p>
-            访问次数<%= Counter.getCount() %>
+            访问次数
         </p>
     </body>
 </html>
