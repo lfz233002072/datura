@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>   
+    <!--不受权限控制的Action请求配置-->
+    <package name="non-authority" namespace="/" extends="struts-default" > 
+        <action name="login" class="datura.actions.LoginAction">
+            <result name="input">/login.jsp</result>
+            <result name="success" type="redirectAction">
+                <param name="namespace">/administrator</param>
+                <param name="actionName">index</param>
+            </result>
+        </action>		
+        <action name="error" class="datura.actions.LoginAction">
+            <result name="success">/500.jsp</result>
+        </action>
+    </package>  
+</struts>

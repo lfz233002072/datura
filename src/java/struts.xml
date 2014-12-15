@@ -1,48 +1,33 @@
 <!DOCTYPE struts PUBLIC
     "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
     "http://struts.apache.org/dtds/struts-2.3.dtd">
-<struts>  
-    <include file="struts-default.xml"/>
+<struts>   
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="true" /> 
-    <constant name="struts.action.extension" value="do"/>
-    <!--不受权限控制的Action请求配置-->
-    <package name="non-authority" namespace="/" extends="struts-default" >		
-        <action name="login" class="datura.actions.LoginAction">
-            <result name="input">/login.jsp</result>
-            <result name="error">/500.jsp</result> 
-            <result name="success" type="redirectAction">
-                <param name="namespace">/administrator</param>
-                <param name="actionName">index</param>
-            </result>
-        </action>		
-        <action name="error" class="datura.actions.LoginAction">
-            <result name="success">/500.jsp</result>
-        </action> 
-    </package> 
-    <!--受权限控制的Action请求配置-->
-    <package name="authority" extends="struts-default" namespace="/administrator">
+    <constant name="struts.action.extension" value="do"/> 
+    
+    <include file="struts-default.xml" />
+    <!-- 包含的配置文件 -->
+    <include file="struts-*.xml" /> 
+    <!-- 管理后台授权公共包 -->
+    <package name="struts-adminbase" abstract="true" extends="struts-default"
+             namespace="/">
         <interceptors>
-            <!--定义一个名为authority的拦截器-->
-            <interceptor
-                class="datura.security.AuthorityInterceptor"
-                name="authority"/>
-            <!--定义一个包含权限检查的拦截器栈-->
-            <interceptor-stack name="mydefault">
-                <!--配置内建默认拦截器-->
-                <interceptor-ref name="defaultStack"/>
-                <!--配置自定义的拦截器-->
+            <interceptor name="authority" 
+                class="datura.security.AuthorityInterceptor"/>
+            <interceptor-stack name="authorityInterceptor">
                 <interceptor-ref name="authority"/>
+                <interceptor-ref name="defaultStack"/>
             </interceptor-stack>
         </interceptors> 
-        <default-interceptor-ref name="mydefault" />
-        <!--定义全局Result-->
+        <!--设置所有Action自动调用的拦截器堆栈-->
+        <default-interceptor-ref name="authorityInterceptor" />
         <global-results>
-            <result name="login">/login.jsp</result>
+            <result name="nopower">/nopower.jsp</result>
+            <result name="gotologin">/login.jsp</result>
             <result name="error">/500.jsp</result> 
         </global-results>
-        <action name="index" class="datura.actions.admin.IndexAction"> 
-            <result name="success">/administrator/index.jsp</result>
-        </action>
     </package>
+    
+
 </struts>
