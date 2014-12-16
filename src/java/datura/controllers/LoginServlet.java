@@ -5,9 +5,9 @@
  */
 package datura.controllers;
 
-import datura.Security.UserInfo;
+import datura.security.UserInfo;
 import datura.Utils;
-import datura.service.UserInfoServiceImp;
+import datura.sys.service.UserInfoServiceImp;
 import java.io.IOException;
 import java.util.Date;
 import javax.servlet.RequestDispatcher;

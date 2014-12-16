@@ -7,9 +7,9 @@ package datura.controllers;
 
 import org.apache.struts2.config.*;
 import com.opensymphony.xwork2.ActionSupport;
-import datura.Security.UserInfo;
+import datura.security.UserInfo;
 import datura.Utils;
-import datura.service.UserInfoServiceImp;
+import datura.sys.service.UserInfoServiceImp;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;

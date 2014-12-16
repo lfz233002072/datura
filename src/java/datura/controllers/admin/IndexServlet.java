@@ -6,7 +6,7 @@
 package datura.controllers.admin;
 
 import datura.controllers.*;
-import datura.Security.UserInfo;
+import datura.security.UserInfo;
 import datura.Utils;
 import datura.enums.TreeLevel;
 import java.io.IOException;

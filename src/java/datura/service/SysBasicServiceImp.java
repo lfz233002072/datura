@@ -5,6 +5,7 @@
  */
 package datura.service;
 
+import datura.sys.service.UserInfoServiceImp;
 import datura.DBHelper;
 import static datura.DBHelper.getConnection;
 import datura.enums.TreeLevel;

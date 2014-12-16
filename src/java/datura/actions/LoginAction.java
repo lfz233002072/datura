@@ -6,6 +6,9 @@
 package datura.actions;
 
 import com.opensymphony.xwork2.*;
+import datura.Utils;
+import datura.security.UserInfo;
+import datura.sys.service.UserInfoServiceImp;
 
 /**
  *
@@ -27,12 +30,22 @@ public class LoginAction extends ActionSupport {
         if (isInvalid(getPassword())) {
             return INPUT;
         }
+        UserInfoServiceImp service = new UserInfoServiceImp();
+        UserInfo user = service.Login(getUsername(), Utils.md5(getPassword()));
+        if (user != null) {
+            UserInfo user2 = service.GetUserInfoByUserName(getUsername());
+            if (user2 == null) {
+                user2 = user;
+            } 
+        }
+        if (user!=null) { 
+            UserInfo user2 = service.GetUserInfoByUserName(getUsername());
+            if (user2 == null) {
+                user2 = user;
+            }
+            ActionContext.getContext().getSession().put("user", user2); 
 
-        if ((getUsername().equals("mm") || getUsername().equals("aumy"))
-                && getPassword().equals("111")) {
-            // 通过ActionContext对象访问Web应用的Session
-            ActionContext.getContext().getSession().put("user", getUsername());
-            ActionContext.getContext().getSession().put("pass", getPassword());
+            System.out.println(user2.getRealname() + "----" + user2.getUserId());
             return SUCCESS;
         } else {
             System.out.println(getUsername() + "----" + getPassword());
@@ -61,11 +74,11 @@ public class LoginAction extends ActionSupport {
     }
 
     public void validate() {
-        if(isInvalid(username)){
+        if (isInvalid(username)) {
             addFieldError("username", "用户明不能为空");
         }
-        
-        if(isInvalid(password)){
+
+        if (isInvalid(password)) {
             addFieldError("password", "密码不能为空");
         }
     }

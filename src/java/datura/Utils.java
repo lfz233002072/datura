@@ -37,7 +37,6 @@ public class Utils {
     /*
      * 加密运算  按MD5算法进行运算
      */
-
     public static String md5(String sourceStr) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");

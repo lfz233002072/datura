@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="DaturaPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>datura.sys.entity.SysModuleGroup</class>
+    <class>datura.sys.entity.THWAllowGate</class>
+    <class>datura.sys.entity.THWCheckon</class>
+    <class>datura.sys.entity.HrDepartment</class>
+    <class>datura.sys.entity.THWExpert</class>
+    <class>datura.sys.entity.SysLogData</class>
+    <class>datura.sys.entity.SysConfigItem</class>
+    <class>datura.sys.entity.HrPosition</class>
+    <class>datura.sys.entity.SysDictionary</class>
+    <class>datura.sys.entity.THWProjectInfo</class>
+    <class>datura.sys.entity.WFEntitiesProcess</class>
+    <class>datura.sys.entity.THWFingerprint</class>
+    <class>datura.sys.entity.HrPositionRoleRelationShips</class>
+    <class>datura.sys.entity.HelpContent</class>
+    <class>datura.sys.entity.SysModule</class>
+    <class>datura.sys.entity.SysUsers</class>
+    <class>datura.sys.entity.SysEnterpriseQualification</class>
+    <class>datura.sys.entity.SysUserRoleRelationShips</class>
+    <class>datura.sys.entity.WFPageCheckInfo</class>
+    <class>datura.sys.entity.SysLocalResource</class>
+    <class>datura.sys.entity.WFFlowEntities</class>
+    <class>datura.sys.entity.HrEmployee</class>
+    <class>datura.sys.entity.THWGateUser</class>
+    <class>datura.sys.entity.SysConfigCategory</class>
+    <class>datura.sys.entity.THWEnterHistory</class>
+    <class>datura.sys.entity.HelpCategory</class>
+    <class>datura.sys.entity.THWCondition</class>
+    <class>datura.sys.entity.SysRoles</class>
+    <class>datura.sys.entity.SysConfig</class>
+    <class>datura.sys.entity.THWGateRoom</class>
+    <class>datura.sys.entity.HrDepartmentPosition</class>
+    <class>datura.sys.entity.SysConfigAttachment</class>
+    <class>datura.sys.entity.SysRights</class>
+    <class>datura.sys.entity.WFTest</class>
+    <class>datura.sys.entity.SysAdministrativeRegion</class>
+    <class>datura.sys.entity.SysLog</class>
+    <class>datura.sys.entity.SysModuleRights</class>
+    <class>datura.sys.entity.THWGate</class>
+    <class>datura.sys.entity.SysPersonalQualifications</class>
+    <class>datura.sys.entity.THWGateControl</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/datura?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+    </properties>
+  </persistence-unit>
+</persistence>

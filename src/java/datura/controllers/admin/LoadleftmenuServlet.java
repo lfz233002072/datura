@@ -5,7 +5,7 @@
  */
 package datura.controllers.admin;
 
-import datura.Security.UserInfo;
+import datura.security.UserInfo;
 import datura.Utils;
 import datura.controllers.AdminServletBase;
 import datura.enums.TreeLevel;

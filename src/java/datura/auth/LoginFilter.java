@@ -5,7 +5,7 @@
  */
 package datura.auth;
  
-import datura.Security.UserInfo;
+import datura.security.UserInfo;
 import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
