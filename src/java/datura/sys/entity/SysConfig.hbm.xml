@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysConfig" table="Sys_Config" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="moduleGroupId" type="string">
+            <column name="ModuleGroupId" length="36">
+                <comment>&#230;&#168;&#161;&#229;&#157;&#151;&#231;&#187;&#132;ID</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="Name">
+                <comment>&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="style" type="int">
+            <column name="Style" not-null="true">
+                <comment>0 &#233;&#187;&#152;&#232;&#174;&#164; 1 JSON&#233;&#133;&#141;&#231;&#189;&#174;</comment>
+            </column>
+        </property>
+        <property name="canAddOrDelete" type="byte">
+            <column name="CanAddOrDelete" not-null="true">
+                <comment>
+                &#230;&#152;&#175;&#229;&#144;&#166;&#229;&#143;&#175;&#229;&#136;&#160;&#233;&#153;&#164;&#239;&#188;&#136;&#232;&#191;&#144;&#232;&#161;&#140;&#228;&#184;&#173;&#229;&#143;&#175;&#230;&#183;&#187;&#229;&#138;&#160;&#229;&#136;&#160;&#233;&#153;&#164;&#231;&#154;&#132;&#233;&#133;&#141;&#231;&#189;&#174;&#239;&#188;&#137;</comment>
+            </column>
+        </property>
+        <property name="customCategoryId" type="string">
+            <column name="CustomCategoryId" length="36">
+                <comment>&#232;&#135;&#170;&#229;&#174;&#154;&#228;&#185;&#137;&#229;&#136;&#134;&#231;&#177;&#187;ID</comment>
+            </column>
+        </property>
+        <property name="jsonData" type="string">
+            <column name="JsonData" length="65535">
+                <comment>&#233;&#133;&#141;&#231;&#189;&#174;&#229;&#134;&#133;&#229;&#174;&#185;</comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="Description">
+                <comment>&#230;&#143;&#143;&#232;&#191;&#176;</comment>
+            </column>
+        </property>
+        <property name="groupName" type="string">
+            <column name="GroupName">
+                <comment>&#233;&#133;&#141;&#231;&#189;&#174;&#229;&#136;&#134;&#231;&#187;&#132;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

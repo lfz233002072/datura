@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.THwFingerprint" table="T_HW_Fingerprint" catalog="datura" optimistic-lock="version">
+        <id name="fingerprintId" type="string">
+            <column name="FingerprintID" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="userId" type="string">
+            <column name="UserID" length="36" not-null="true" />
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="Createtime" length="19" not-null="true" />
+        </property>
+        <property name="creator" type="string">
+            <column name="Creator" length="50" not-null="true" />
+        </property>
+        <property name="features" type="string">
+            <column name="Features" length="65535" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="Sort" />
+        </property>
+        <property name="fingerprint" type="string">
+            <column name="Fingerprint" />
+        </property>
+    </class>
+</hibernate-mapping>

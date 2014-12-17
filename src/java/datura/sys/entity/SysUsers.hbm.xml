@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysUsers" table="Sys_Users" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="string">
+            <column name="Username">
+                <comment>&#231;&#148;&#168;&#230;&#136;&#183;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="password" type="string">
+            <column name="Password">
+                <comment>&#229;&#175;&#134;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+        <property name="realname" type="string">
+            <column name="Realname">
+                <comment>&#231;&#156;&#159;&#229;&#174;&#158;&#229;&#167;&#147;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="sex" type="java.lang.Integer">
+            <column name="Sex">
+                <comment>&#230;&#128;&#167;&#229;&#136;&#171;</comment>
+            </column>
+        </property>
+        <property name="tel" type="string">
+            <column name="Tel">
+                <comment>&#232;&#129;&#148;&#231;&#179;&#187;&#231;&#148;&#181;&#232;&#175;&#157;</comment>
+            </column>
+        </property>
+        <property name="moblie" type="string">
+            <column name="Moblie">
+                <comment>&#231;&#167;&#187;&#229;&#138;&#168;&#231;&#148;&#181;&#232;&#175;&#157;</comment>
+            </column>
+        </property>
+        <property name="idNo" type="string">
+            <column name="IdNo">
+                <comment>&#232;&#186;&#171;&#228;&#187;&#189;&#232;&#175;&#129;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="loginTimes" type="java.lang.Integer">
+            <column name="LoginTimes">
+                <comment>&#231;&#153;&#187;&#229;&#133;&#165;&#230;&#172;&#161;&#230;&#149;&#176;</comment>
+            </column>
+        </property>
+        <property name="lastLoginTime" type="timestamp">
+            <column name="LastLoginTime" length="19">
+                <comment>&#230;&#156;&#128;&#229;&#144;&#142;&#231;&#153;&#187;&#229;&#133;&#165;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="delFlag" type="java.lang.Integer">
+            <column name="DelFlag">
+                <comment>&#230;&#152;&#175;&#229;&#144;&#166;&#229;&#136;&#160;&#233;&#153;&#164;&#230;&#160;&#135;&#232;&#174;&#176; 0 &#230;&#173;&#163;&#229;&#184;&#184; 1
+                &#229;&#136;&#160;&#233;&#153;&#164;</comment>
+            </column>
+        </property>
+        <property name="dataStatus" type="java.lang.Integer">
+            <column name="DataStatus">
+                <comment>&#230;&#149;&#176;&#230;&#141;&#174;&#231;&#138;&#182;&#230;&#128;&#129; 0 &#230;&#173;&#163;&#229;&#184;&#184; -1
+                &#229;&#183;&#178;&#231;&#187;&#143;&#232;&#162;&#171;&#233;&#148;&#129; -2
+                &#231;&#148;&#179;&#232;&#175;&#183;&#230;&#137;&#190;&#229;&#155;&#158;&#229;&#175;&#134;&#231;&#160;&#129;&#228;&#184;&#173;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CreateTime" length="19">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="lastIpAddress" type="string">
+            <column name="LastIpAddress">
+                <comment>&#230;&#156;&#128;&#232;&#191;&#145;&#231;&#153;&#187;&#229;&#189;&#149;IP&#229;&#156;&#176;&#229;&#157;&#128;</comment>
+            </column>
+        </property>
+        <property name="lastActivityDate" type="timestamp">
+            <column name="LastActivityDate" length="19">
+                <comment>&#230;&#156;&#128;&#232;&#191;&#145;&#230;&#180;&#187;&#232;&#183;&#131;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateTime" type="timestamp">
+            <column name="LastUpdateTime" length="19">
+                <comment>&#230;&#156;&#128;&#232;&#191;&#145;&#228;&#191;&#174;&#230;&#148;&#185;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

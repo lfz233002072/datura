@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.WfEntitiesProcess" table="WF_EntitiesProcess" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="entityId" type="string">
+            <column name="EntityId" length="36">
+                <comment>&#228;&#184;&#154;&#229;&#138;&#161;&#229;&#174;&#158;&#228;&#189;&#147;ID</comment>
+            </column>
+        </property>
+        <property name="flowId" type="string">
+            <column name="FlowId" length="36">
+                <comment>&#230;&#181;&#129;&#231;&#168;&#139;&#229;&#174;&#158;&#228;&#190;&#139;ID</comment>
+            </column>
+        </property>
+        <property name="nodeId" type="string">
+            <column name="NodeId" length="36">
+                <comment>&#232;&#138;&#130;&#231;&#130;&#185;ID</comment>
+            </column>
+        </property>
+        <property name="nodeCode" type="string">
+            <column name="NodeCode" length="65535">
+                <comment>&#232;&#138;&#130;&#231;&#130;&#185;&#231;&#188;&#150;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+        <property name="nodeName" type="string">
+            <column name="NodeName" length="65535">
+                <comment>&#232;&#138;&#130;&#231;&#130;&#185;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="sender" type="string">
+            <column name="Sender" length="50">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="senderName" type="string">
+            <column name="SenderName" length="65535">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#228;&#186;&#186;&#229;&#167;&#147;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="submitOrReturn" type="java.lang.Byte">
+            <column name="SubmitOrReturn">
+                <comment>&#230;&#143;&#144;&#228;&#186;&#164;&#230;&#136;&#150;&#233;&#128;&#128;&#229;&#155;&#158;</comment>
+            </column>
+        </property>
+        <property name="sendTime" type="timestamp">
+            <column name="SendTime" length="19">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="parentNodeId" type="string">
+            <column name="ParentNodeId" length="36">
+                <comment>&#231;&#136;&#182;&#232;&#138;&#130;&#231;&#130;&#185;ID</comment>
+            </column>
+        </property>
+        <property name="entitiesType" type="string">
+            <column name="EntitiesType" length="65535">
+                <comment>&#229;&#174;&#158;&#228;&#189;&#147;&#231;&#177;&#187;&#229;&#158;&#139;</comment>
+            </column>
+        </property>
+        <property name="systemName" type="string">
+            <column name="SystemName" length="50">
+                <comment>&#230;&#137;&#128;&#229;&#177;&#158;&#231;&#179;&#187;&#231;&#187;&#159;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.WfFlowEntities" table="WF_FlowEntities" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="entityId" type="string">
+            <column name="EntityId" length="50">
+                <comment>&#228;&#184;&#154;&#229;&#138;&#161;&#229;&#174;&#158;&#228;&#189;&#147;ID</comment>
+            </column>
+        </property>
+        <property name="flowId" type="string">
+            <column name="FlowId" length="50">
+                <comment>&#230;&#181;&#129;&#231;&#168;&#139;&#229;&#174;&#158;&#228;&#189;&#147;ID</comment>
+            </column>
+        </property>
+        <property name="flowTypeName" type="string">
+            <column name="FlowTypeName" length="65535">
+                <comment>&#230;&#181;&#129;&#231;&#168;&#139;&#231;&#177;&#187;&#229;&#158;&#139;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="flowTypeCode" type="string">
+            <column name="FlowTypeCode" length="50">
+                <comment>&#230;&#181;&#129;&#231;&#168;&#139;&#231;&#177;&#187;&#229;&#158;&#139;&#231;&#188;&#150;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="systemName" type="string">
+            <column name="SystemName" length="50">
+                <comment>&#231;&#179;&#187;&#231;&#187;&#159;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="createUserId" type="string">
+            <column name="CreateUserId" length="50" />
+        </property>
+        <property name="createDataTime" type="timestamp">
+            <column name="CreateDataTime" length="19" />
+        </property>
+        <property name="flowModelName" type="string">
+            <column name="FlowModelName" length="65535">
+                <comment>&#230;&#168;&#161;&#231;&#137;&#136;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

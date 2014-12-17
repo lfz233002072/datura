@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysRights" table="Sys_Rights" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="moduleRightsId" type="string">
+            <column name="ModuleRightsId" length="36" not-null="true">
+                <comment>&#230;&#157;&#131;&#233;&#153;&#144;&#229;&#128;&#188;Id</comment>
+            </column>
+        </property>
+        <property name="roleId" type="string">
+            <column name="RoleId" length="36" not-null="true">
+                <comment>&#232;&#167;&#146;&#232;&#137;&#178;Id</comment>
+            </column>
+        </property>
+        <property name="hrId" type="string">
+            <column name="HrId" length="36">
+                <comment>&#230;&#157;&#131;&#233;&#153;&#144;&#233;&#133;&#141;&#231;&#189;&#174;&#229;&#174;&#158;&#228;&#189;&#147;ID</comment>
+            </column>
+        </property>
+        <property name="hrType" type="java.lang.Integer">
+            <column name="HrType">
+                <comment>&#230;&#157;&#131;&#233;&#153;&#144;&#231;&#154;&#132;&#228;&#186;&#186;&#228;&#186;&#139;&#231;&#177;&#187;&#229;&#158;&#139;&#239;&#188;&#140;0
+                &#228;&#186;&#186;&#228;&#186;&#139;&#231;&#187;&#132;&#231;&#187;&#135;&#228;&#184;&#141;&#231;&#155;&#184;&#229;&#133;&#179;
+                1:&#229;&#145;&#152;&#229;&#183;&#165; 2:&#233;&#131;&#168;&#233;&#151;&#168; 4:&#232;&#161;&#140;&#230;&#148;&#191;&#231;&#186;&#167;&#229;&#136;&#171;
+                8:&#233;&#131;&#168;&#233;&#151;&#168;&#229;&#178;&#151;&#228;&#189;&#141; 32768:&#229;&#133;&#182;&#228;&#187;&#150;</comment>
+            </column>
+        </property>
+        <property name="fromDate" type="timestamp">
+            <column name="FromDate" length="19">
+                <comment>&#230;&#157;&#131;&#233;&#153;&#144;&#229;&#188;&#128;&#229;&#167;&#139;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="EndDate" length="19">
+                <comment>&#230;&#157;&#131;&#233;&#153;&#144;&#231;&#187;&#147;&#230;&#157;&#159;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="moduleId" type="string">
+            <column name="ModuleId" length="36" />
+        </property>
+        <property name="groupId" type="string">
+            <column name="GroupId" length="36" />
+        </property>
+    </class>
+</hibernate-mapping>

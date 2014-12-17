@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.HrEmployee" table="Hr_Employee" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="realName" type="string">
+            <column name="RealName">
+                <comment>&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="userId" type="string">
+            <column name="UserId" length="36">
+                <comment>&#231;&#148;&#168;&#230;&#136;&#183;&#231;&#153;&#187;&#229;&#189;&#149;ID</comment>
+            </column>
+        </property>
+        <property name="sex" type="java.lang.Integer">
+            <column name="Sex">
+                <comment>&#230;&#128;&#167;&#229;&#136;&#171;</comment>
+            </column>
+        </property>
+        <property name="tel" type="string">
+            <column name="Tel">
+                <comment>&#232;&#129;&#148;&#231;&#179;&#187;&#231;&#148;&#181;&#232;&#175;&#157;</comment>
+            </column>
+        </property>
+        <property name="moblie" type="string">
+            <column name="Moblie">
+                <comment>&#231;&#167;&#187;&#229;&#138;&#168;&#231;&#148;&#181;&#232;&#175;&#157;</comment>
+            </column>
+        </property>
+        <property name="idNo" type="string">
+            <column name="IdNo">
+                <comment>&#232;&#186;&#171;&#228;&#187;&#189;&#232;&#175;&#129;&#229;&#143;&#183;</comment>
+            </column>
+        </property>
+        <property name="departmentPositionId" type="string">
+            <column name="DepartmentPositionId" length="36">
+                <comment>&#233;&#131;&#168;&#233;&#151;&#168;&#229;&#178;&#151;&#228;&#189;&#141;&#229;&#133;&#179;&#232;&#129;&#148;ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

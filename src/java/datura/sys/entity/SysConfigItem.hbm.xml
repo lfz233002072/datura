@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysConfigItem" table="Sys_ConfigItem" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name">
+                <comment>&#233;&#133;&#141;&#231;&#189;&#174;&#233;&#161;&#185;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="displayName" type="string">
+            <column name="DisplayName">
+                <comment>&#233;&#133;&#141;&#231;&#189;&#174;&#230;&#152;&#190;&#231;&#164;&#186;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="value" type="string">
+            <column name="Value" length="65535">
+                <comment>&#233;&#133;&#141;&#231;&#189;&#174;&#229;&#128;&#188;</comment>
+            </column>
+        </property>
+        <property name="itemType" type="string">
+            <column name="ItemType">
+                <comment>&#230;&#149;&#176;&#230;&#141;&#174;&#231;&#177;&#187;&#229;&#158;&#139; 0&#239;&#188;&#154;&#230;&#150;&#135;&#230;&#156;&#172;&#230;&#161;&#134;
+                1&#230;&#149;&#180;&#230;&#149;&#176;&#230;&#142;&#167;&#228;&#187;&#182; 2 &#230;&#151;&#182;&#233;&#151;&#180;&#230;&#142;&#167;&#228;&#187;&#182; 3:bool
+                4&#239;&#188;&#154;&#230;&#181;&#174;&#231;&#130;&#185;&#230;&#149;&#176; 101&#239;&#188;&#154;CheckBox
+                102&#239;&#188;&#154;&#228;&#184;&#139;&#230;&#139;&#137;&#229;&#136;&#151;&#232;&#161;&#168; 103&#239;&#188;&#154;&#230;&#160;&#145;</comment>
+            </column>
+        </property>
+        <property name="dataSourseType" type="string">
+            <column name="DataSourseType">
+                <comment>&#230;&#149;&#176;&#230;&#141;&#174;&#230;&#157;&#165;&#230;&#186;&#144;&#231;&#177;&#187;&#229;&#158;&#139; 0
+                &#229;&#189;&#149;&#229;&#133;&#165;&#228;&#187;&#165;,&#229;&#136;&#134;&#229;&#137;&#178;&#231;&#154;&#132;&#229;&#173;&#151;&#231;&#172;&#166;&#228;&#184;&#178;
+                1 &#230;&#149;&#176;&#230;&#141;&#174;&#229;&#173;&#151;&#229;&#133;&#184;
+                99:JSON&#230;&#160;&#188;&#229;&#188;&#143;&#229;&#189;&#149;&#229;&#133;&#165;</comment>
+            </column>
+        </property>
+        <property name="dataSourseJsonData" type="string">
+            <column name="DataSourseJsonData" length="65535">
+                <comment>
+                JSON&#230;&#160;&#188;&#229;&#188;&#143;&#230;&#149;&#176;&#230;&#141;&#174;&#230;&#186;&#144;&#239;&#188;&#140;&#230;&#157;&#165;&#230;&#186;&#144;&#228;&#186;&#142;&#230;&#149;&#176;&#230;&#141;&#174;&#229;&#173;&#151;&#229;&#133;&#184;&#231;&#154;&#132;&#228;&#184;&#139;&#230;&#139;&#137;&#229;&#136;&#151;&#232;&#161;&#168;&#230;&#136;&#150;&#230;&#160;&#145;&#231;&#154;&#132;&#229;&#134;&#133;&#229;&#174;&#185;&#230;&#160;&#188;&#229;&#188;&#143;&#228;&#184;&#186;{'DictionaryCode':'Value'}
+                &#239;&#188;&#140;&#229;&#133;&#182;&#229;&#174;&#131;&#228;&#184;&#186;&#229;&#165;&#145;&#231;&#186;&#166;&#232;&#167;&#132;&#229;&#174;&#154;&#231;&#154;&#132;JSON&#230;&#160;&#188;&#229;&#188;&#143;&#230;&#149;&#176;&#230;&#141;&#174;</comment>
+            </column>
+        </property>
+        <property name="dataSort" type="int">
+            <column name="DataSort" not-null="true">
+                <comment>&#230;&#142;&#146;&#229;&#186;&#143;</comment>
+            </column>
+        </property>
+        <property name="customField" type="string">
+            <column name="CustomField" length="65535">
+                <comment>&#232;&#135;&#170;&#229;&#174;&#154;&#228;&#185;&#137;&#229;&#177;&#158;&#230;&#128;&#167;</comment>
+            </column>
+        </property>
+        <property name="dataPrecision" type="java.lang.Integer">
+            <column name="DataPrecision">
+                <comment>&#230;&#149;&#176;&#229;&#173;&#151;&#231;&#178;&#190;&#229;&#186;&#166;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

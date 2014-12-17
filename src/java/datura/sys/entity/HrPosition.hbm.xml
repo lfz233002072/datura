@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.HrPosition" table="Hr_Position" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="positionName" type="string">
+            <column name="PositionName">
+                <comment>&#229;&#178;&#151;&#228;&#189;&#141;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="Description" length="65535">
+                <comment>&#230;&#143;&#143;&#232;&#191;&#176;</comment>
+            </column>
+        </property>
+        <property name="dataStatus" type="java.lang.Integer">
+            <column name="DataStatus">
+                <comment>&#231;&#138;&#182;&#230;&#128;&#129;</comment>
+            </column>
+        </property>
+        <property name="levelId" type="java.lang.Integer">
+            <column name="LevelId">
+                <comment>&#232;&#161;&#140;&#230;&#148;&#191;&#231;&#186;&#167;&#229;&#136;&#171;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CreateTime" length="19">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="createUserId" type="string">
+            <column name="CreateUserId" length="36">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateTime" type="timestamp">
+            <column name="LastUpdateTime" length="19">
+                <comment>&#230;&#156;&#128;&#229;&#144;&#142;&#230;&#155;&#180;&#230;&#150;&#176;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateUserId" type="string">
+            <column name="LastUpdateUserId" length="36">
+                <comment>&#230;&#156;&#128;&#229;&#144;&#142;&#230;&#155;&#180;&#230;&#150;&#176;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

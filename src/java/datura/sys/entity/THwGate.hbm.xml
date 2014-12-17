@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.THwGate" table="T_HW_Gate" catalog="datura" optimistic-lock="version">
+        <id name="gateId" type="string">
+            <column name="GateID" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="gateKey" type="string">
+            <column name="GateKey" length="50" not-null="true" />
+        </property>
+        <property name="gateAddress" type="string">
+            <column name="GateAddress" length="65535" not-null="true" />
+        </property>
+        <property name="gateType" type="string">
+            <column name="GateType" length="65535" not-null="true" />
+        </property>
+        <property name="gateLoc" type="string">
+            <column name="GateLoc" length="65535" not-null="true" />
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="Createtime" length="19" not-null="true" />
+        </property>
+        <property name="creator" type="string">
+            <column name="Creator" length="50" not-null="true" />
+        </property>
+        <property name="isdel" type="int">
+            <column name="Isdel" not-null="true" />
+        </property>
+        <property name="gateSn" type="string">
+            <column name="GateSN" length="50" not-null="true" />
+        </property>
+        <property name="gatePort" type="int">
+            <column name="GatePort" not-null="true" />
+        </property>
+        <property name="gateNum" type="int">
+            <column name="GateNum" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysLog" table="Sys_Log" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="logType" type="java.lang.Integer">
+            <column name="LogType">
+                <comment>&#230;&#151;&#165;&#229;&#191;&#151;&#231;&#177;&#187;&#229;&#158;&#139;</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="Name">
+                <comment>&#230;&#151;&#165;&#229;&#191;&#151;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="shortMessage" type="string">
+            <column name="ShortMessage" length="65535">
+                <comment>&#231;&#174;&#128;&#231;&#159;&#173;&#230;&#143;&#143;&#232;&#191;&#176;</comment>
+            </column>
+        </property>
+        <property name="fullMessage" type="string">
+            <column name="FullMessage" length="65535">
+                <comment>&#232;&#175;&#166;&#231;&#187;&#134;&#230;&#143;&#143;&#232;&#191;&#176;</comment>
+            </column>
+        </property>
+        <property name="referrerUrl" type="string">
+            <column name="ReferrerUrl">
+                <comment>&#229;&#188;&#149;&#231;&#148;&#168;&#229;&#156;&#176;&#229;&#157;&#128;</comment>
+            </column>
+        </property>
+        <property name="requestUrl" type="string">
+            <column name="RequestUrl">
+                <comment>&#232;&#175;&#183;&#230;&#177;&#130;&#229;&#156;&#176;&#229;&#157;&#128;</comment>
+            </column>
+        </property>
+        <property name="mac" type="string">
+            <column name="MAC">
+                <comment>MAC&#229;&#156;&#176;&#229;&#157;&#128;</comment>
+            </column>
+        </property>
+        <property name="ip" type="string">
+            <column name="IP">
+                <comment>IP&#229;&#156;&#176;&#229;&#157;&#128;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CreateTime" length="19">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="createUserId" type="string">
+            <column name="CreateUserId" length="36">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

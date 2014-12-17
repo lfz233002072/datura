@@ -11,17 +11,21 @@
     <include file="struts-*.xml" /> 
     <!-- 管理后台授权公共包 -->
     <package name="struts-adminbase" abstract="true" extends="struts-default"
-             namespace="/">
+             namespace="/"> 
         <interceptors>
-            <interceptor name="authority" 
-                class="datura.security.AuthorityInterceptor"/>
-            <interceptor-stack name="authorityInterceptor">
-                <interceptor-ref name="authority"/>
+            <!--定义一个名为authority的拦截器-->
+            <interceptor
+                class="datura.security.AuthorityInterceptor"
+                name="authority"/>
+            <!--定义一个包含权限检查的拦截器栈-->
+            <interceptor-stack name="mydefault">
+                <!--配置内建默认拦截器-->
                 <interceptor-ref name="defaultStack"/>
+                <!--配置自定义的拦截器-->
+                <interceptor-ref name="authority"/>
             </interceptor-stack>
-        </interceptors> 
-        <!--设置所有Action自动调用的拦截器堆栈-->
-        <default-interceptor-ref name="authorityInterceptor" />
+        </interceptors>
+        <default-interceptor-ref name="mydefault" />
         <global-results>
             <result name="nopower">/nopower.jsp</result>
             <result name="gotologin">/login.jsp</result>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysConfigAttachment" table="Sys_ConfigAttachment" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="description" type="string">
+            <column name="Description" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" />
+        </property>
+        <property name="code" type="string">
+            <column name="Code" />
+        </property>
+        <property name="fileExtensions" type="string">
+            <column name="FileExtensions">
+                <comment>&#230;&#150;&#135;&#228;&#187;&#182;&#230;&#137;&#169;&#229;&#177;&#149;&#229;&#144;&#141;&#229;&#136;&#151;&#232;&#161;&#168;</comment>
+            </column>
+        </property>
+        <property name="maxSize" type="string">
+            <column name="MaxSize">
+                <comment>&#230;&#156;&#128;&#229;&#164;&#167;&#230;&#150;&#135;&#228;&#187;&#182;&#229;&#164;&#167;&#229;&#176;&#143;</comment>
+            </column>
+        </property>
+        <property name="singleOrMulti" type="java.lang.Byte">
+            <column name="SingleOrMulti">
+                <comment>&#229;&#141;&#149;&#228;&#184;&#128;&#230;&#136;&#150;&#229;&#164;&#154;&#228;&#184;&#170;</comment>
+            </column>
+        </property>
+        <property name="dataSort" type="java.lang.Integer">
+            <column name="DataSort">
+                <comment>&#230;&#142;&#146;&#229;&#186;&#143;</comment>
+            </column>
+        </property>
+        <property name="visitLevel" type="java.lang.Integer">
+            <column name="VisitLevel">
+                <comment>&#229;&#177;&#130;&#231;&#186;&#167;</comment>
+            </column>
+        </property>
+        <property name="visitPath" type="string">
+            <column name="VisitPath">
+                <comment>&#232;&#183;&#175;&#229;&#190;&#132;</comment>
+            </column>
+        </property>
+        <property name="rootId" type="string">
+            <column name="RootId" length="36">
+                <comment>&#232;&#183;&#159;&#232;&#138;&#130;&#231;&#130;&#185;</comment>
+            </column>
+        </property>
+        <property name="parentId" type="string">
+            <column name="ParentId" length="36">
+                <comment>&#231;&#136;&#182;&#229;&#136;&#134;&#231;&#187;&#132;ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.HrDepartment" table="Hr_Department" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name">
+                <comment>&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="Description" length="65535">
+                <comment>&#230;&#143;&#143;&#232;&#191;&#176;</comment>
+            </column>
+        </property>
+        <property name="deptmentType" type="java.lang.Integer">
+            <column name="DeptmentType">
+                <comment>&#233;&#131;&#168;&#233;&#151;&#168;&#231;&#177;&#187;&#229;&#158;&#139;</comment>
+            </column>
+        </property>
+        <property name="areaCode" type="string">
+            <column name="AreaCode">
+                <comment>&#229;&#189;&#146;&#229;&#177;&#158;&#229;&#140;&#186;&#229;&#159;&#159;</comment>
+            </column>
+        </property>
+        <property name="rootId" type="string">
+            <column name="RootId" length="36">
+                <comment>&#230;&#160;&#185;&#233;&#131;&#168;&#233;&#151;&#168;ID</comment>
+            </column>
+        </property>
+        <property name="parentId" type="string">
+            <column name="ParentId" length="36">
+                <comment>&#231;&#136;&#182;&#233;&#131;&#168;&#233;&#151;&#168;ID</comment>
+            </column>
+        </property>
+        <property name="visitLevel" type="java.lang.Integer">
+            <column name="VisitLevel">
+                <comment>&#232;&#174;&#191;&#233;&#151;&#174;&#229;&#177;&#130;&#230;&#172;&#161;</comment>
+            </column>
+        </property>
+        <property name="visitPath" type="string">
+            <column name="VisitPath" length="65535">
+                <comment>&#233;&#129;&#141;&#229;&#142;&#134;&#232;&#183;&#175;&#229;&#190;&#132;</comment>
+            </column>
+        </property>
+        <property name="delFlag" type="java.lang.Byte">
+            <column name="DelFlag">
+                <comment>&#229;&#136;&#160;&#233;&#153;&#164;&#230;&#160;&#135;&#232;&#174;&#176; true
+                &#232;&#161;&#168;&#231;&#164;&#186;&#229;&#183;&#178;&#231;&#187;&#143;&#229;&#136;&#160;&#233;&#153;&#164;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

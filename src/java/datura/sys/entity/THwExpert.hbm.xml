@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.THwExpert" table="T_HW_Expert" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="ID" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="expertId" type="int">
+            <column name="ExpertID" not-null="true" />
+        </property>
+        <property name="expertName" type="string">
+            <column name="ExpertName" length="20" not-null="true" />
+        </property>
+        <property name="sex" type="string">
+            <column name="Sex" length="2" not-null="true" />
+        </property>
+        <property name="tel" type="string">
+            <column name="Tel" length="20" not-null="true" />
+        </property>
+        <property name="cardId" type="string">
+            <column name="CardID" length="18" not-null="true" />
+        </property>
+        <property name="speciality" type="string">
+            <column name="Speciality" length="20">
+                <comment>&#228;&#184;&#147;&#228;&#184;&#154;</comment>
+            </column>
+        </property>
+        <property name="proCode" type="java.lang.Integer">
+            <column name="ProCode" />
+        </property>
+        <property name="loginname" type="string">
+            <column name="Loginname" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="50" not-null="true" />
+        </property>
+        <property name="fingerprint1" type="string">
+            <column name="Fingerprint1" length="65535" />
+        </property>
+        <property name="fingerprint2" type="string">
+            <column name="Fingerprint2" length="65535" />
+        </property>
+        <property name="fingerprint3" type="string">
+            <column name="Fingerprint3" length="65535" />
+        </property>
+        <property name="photo" type="binary">
+            <column name="Photo" />
+        </property>
+        <property name="arrivePhoto" type="binary">
+            <column name="ArrivePhoto" />
+        </property>
+        <property name="arriveTime" type="timestamp">
+            <column name="ArriveTime" length="19" />
+        </property>
+        <property name="isRight" type="java.lang.Integer">
+            <column name="IsRight" />
+        </property>
+        <property name="checkInState" type="java.lang.Integer">
+            <column name="CheckInState" />
+        </property>
+        <property name="otherContent" type="string">
+            <column name="OtherContent" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CreateDate" length="19" not-null="true" />
+        </property>
+        <property name="biddingTime" type="timestamp">
+            <column name="BiddingTime" length="19" />
+        </property>
+        <property name="expertCode" type="string">
+            <column name="ExpertCode" length="50" />
+        </property>
+        <property name="employer" type="string">
+            <column name="EMPLOYER" length="65535">
+                <comment>&#230;&#137;&#128;&#229;&#177;&#158;&#229;&#141;&#149;&#228;&#189;&#141;</comment>
+            </column>
+        </property>
+        <property name="technicalPost" type="string">
+            <column name="TECHNICAL_POST" length="50">
+                <comment>&#232;&#129;&#140;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

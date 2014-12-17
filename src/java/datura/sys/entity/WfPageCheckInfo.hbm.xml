@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.WfPageCheckInfo" table="WF_PageCheckInfo" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="entityId" type="string">
+            <column name="EntityId" length="50">
+                <comment>&#228;&#184;&#154;&#229;&#138;&#161;&#229;&#174;&#158;&#228;&#189;&#147;ID</comment>
+            </column>
+        </property>
+        <property name="flowId" type="string">
+            <column name="FlowId" length="50">
+                <comment>&#230;&#181;&#129;&#231;&#168;&#139;&#229;&#174;&#158;&#228;&#190;&#139;ID</comment>
+            </column>
+        </property>
+        <property name="nodeId" type="string">
+            <column name="NodeId" length="50">
+                <comment>&#232;&#138;&#130;&#231;&#130;&#185;ID</comment>
+            </column>
+        </property>
+        <property name="nodeCode" type="string">
+            <column name="NodeCode" length="50">
+                <comment>&#232;&#138;&#130;&#231;&#130;&#185;&#231;&#188;&#150;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+        <property name="checkInfo" type="string">
+            <column name="CheckInfo">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#230;&#132;&#143;&#232;&#167;&#129;</comment>
+            </column>
+        </property>
+        <property name="checkStatu" type="string">
+            <column name="CheckStatu" length="50">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#231;&#138;&#182;&#230;&#128;&#129;&#239;&#188;&#136;IsSave,Checking,Check_Yes,Check_No&#239;&#188;&#137;</comment>
+            </column>
+        </property>
+        <property name="checkTime" type="timestamp">
+            <column name="CheckTime" length="19">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#230;&#151;&#165;&#230;&#156;&#159;</comment>
+            </column>
+        </property>
+        <property name="checkUserId" type="string">
+            <column name="CheckUserId" length="50">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#228;&#186;&#186;ID</comment>
+            </column>
+        </property>
+        <property name="checkUserName" type="string">
+            <column name="CheckUserName" length="65535">
+                <comment>&#229;&#174;&#161;&#230;&#160;&#184;&#228;&#186;&#186;&#229;&#167;&#147;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="systemName" type="string">
+            <column name="SystemName" length="50">
+                <comment>&#231;&#179;&#187;&#231;&#187;&#159;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="childProcessId" type="string">
+            <column name="ChildProcessId" length="50">
+                <comment>
+                &#229;&#173;&#144;&#230;&#181;&#129;&#231;&#168;&#139;ID&#239;&#188;&#136;&#230;&#151;&#160;&#229;&#173;&#144;&#230;&#181;&#129;&#231;&#168;&#139;&#230;&#131;&#133;&#229;&#134;&#181;&#228;&#191;&#157;&#229;&#173;&#152;&#230;&#181;&#129;&#231;&#168;&#139;&#229;&#174;&#158;&#228;&#190;&#139;ID&#239;&#188;&#137;</comment>
+            </column>
+        </property>
+        <property name="checkFileId" type="string">
+            <column name="CheckFileId" length="50">
+                <comment>
+                &#229;&#174;&#161;&#230;&#160;&#184;&#233;&#153;&#132;&#228;&#187;&#182;ID(&#230;&#151;&#182;&#233;&#151;&#180;&#233;&#153;&#132;&#228;&#187;&#182;&#229;&#173;&#152;&#229;&#130;&#168;&#229;&#156;&#168;&#229;&#144;&#132;&#228;&#184;&#170;&#228;&#184;&#154;&#229;&#138;&#161;&#231;&#179;&#187;&#231;&#187;&#159;&#228;&#184;&#173;)</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

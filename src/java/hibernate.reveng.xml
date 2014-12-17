@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="datura"/>
+  <table-filter match-name="Sys_Roles"/>
+  <table-filter match-name="WF_FlowEntities"/>
+  <table-filter match-name="T_HW_GateUser"/>
+  <table-filter match-name="Sys_ConfigItem"/>
+  <table-filter match-name="T_HW_ProjectInfo"/>
+  <table-filter match-name="Sys_Rights"/>
+  <table-filter match-name="WF_EntitiesProcess"/>
+  <table-filter match-name="Sys_LogData"/>
+  <table-filter match-name="Sys_ModuleRights"/>
+  <table-filter match-name="T_HW_EnterHistory"/>
+  <table-filter match-name="T_HW_Checkon"/>
+  <table-filter match-name="T_HW_Fingerprint"/>
+  <table-filter match-name="T_HW_GateControl"/>
+  <table-filter match-name="Sys_UserRoleRelationShips"/>
+  <table-filter match-name="Hr_Employee"/>
+  <table-filter match-name="T_HW_Expert"/>
+  <table-filter match-name="HelpCategory"/>
+  <table-filter match-name="Hr_DepartmentPosition"/>
+  <table-filter match-name="HelpContent"/>
+  <table-filter match-name="Sys_ConfigAttachment"/>
+  <table-filter match-name="T_HW_Gate"/>
+  <table-filter match-name="T_HW_Condition"/>
+  <table-filter match-name="Sys_Log"/>
+  <table-filter match-name="Sys_LocalResource"/>
+  <table-filter match-name="Sys_Users"/>
+  <table-filter match-name="Sys_EnterpriseQualification"/>
+  <table-filter match-name="Sys_PersonalQualifications"/>
+  <table-filter match-name="Sys_Dictionary"/>
+  <table-filter match-name="Hr_PositionRoleRelationShips"/>
+  <table-filter match-name="Sys_ModuleGroup"/>
+  <table-filter match-name="Sys_Config"/>
+  <table-filter match-name="Sys_Module"/>
+  <table-filter match-name="WF_PageCheckInfo"/>
+  <table-filter match-name="Sys_ConfigCategory"/>
+  <table-filter match-name="Hr_Department"/>
+  <table-filter match-name="T_HW_AllowGate"/>
+  <table-filter match-name="WF_Test"/>
+  <table-filter match-name="T_HW_GateRoom"/>
+  <table-filter match-name="Hr_Position"/>
+  <table-filter match-name="Sys_AdministrativeRegion"/>
+</hibernate-reverse-engineering>

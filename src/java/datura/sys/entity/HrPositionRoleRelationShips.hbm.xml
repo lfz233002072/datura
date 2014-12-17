@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.HrPositionRoleRelationShips" table="Hr_PositionRoleRelationShips" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="positionId" type="string">
+            <column name="PositionID" length="36" not-null="true">
+                <comment>&#229;&#178;&#151;&#228;&#189;&#141;ID</comment>
+            </column>
+        </property>
+        <property name="roleId" type="string">
+            <column name="RoleId" length="36" not-null="true">
+                <comment>&#232;&#167;&#146;&#232;&#137;&#178;ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.THwGateUser" table="T_HW_GateUser" catalog="datura" optimistic-lock="version">
+        <id name="userId" type="string">
+            <column name="UserID" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="userName" type="string">
+            <column name="UserName" length="50" not-null="true" />
+        </property>
+        <property name="userCard" type="string">
+            <column name="UserCard" length="50" not-null="true" />
+        </property>
+        <property name="userTel" type="string">
+            <column name="UserTel" length="50" not-null="true" />
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="Createtime" length="19" not-null="true" />
+        </property>
+        <property name="creator" type="string">
+            <column name="Creator" length="50" not-null="true" />
+        </property>
+        <property name="isActive" type="int">
+            <column name="IsActive" not-null="true" />
+        </property>
+        <property name="isInvocation" type="java.lang.Integer">
+            <column name="IsInvocation" />
+        </property>
+    </class>
+</hibernate-mapping>

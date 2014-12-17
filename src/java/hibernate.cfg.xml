@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.current_session_context_class">thread</property>
-    <property name="hibernate.connection.pool_size">5</property>
-    <property name="hibernate.cache.use_second_level_cache">false</property>
-    <property name="hibernate.cache.use_query_cache">false</property>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/datura?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.transaction.auto_close_session">true</property>
-    <property name="hibernate.transaction.flush_before_completion">true</property>
-  </session-factory>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/datura?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">root</property>
+        <!-- Use the c3p0 connection pool provider -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+        <!-- Show and print nice SQL on stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hbm2ddl.auto">update</property>
+        <!-- Disable the second-level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <mapping resource="datura/sys/entity/THwGateRoom.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwExpert.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysEnterpriseQualification.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysLog.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysRights.hbm.xml"/>
+        <mapping resource="datura/sys/entity/HelpCategory.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysUserRoleRelationShips.hbm.xml"/>
+        <mapping resource="datura/sys/entity/WfEntitiesProcess.hbm.xml"/>
+        <mapping resource="datura/sys/entity/HrDepartmentPosition.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysLogData.hbm.xml"/>
+        <mapping resource="datura/sys/entity/HrPositionRoleRelationShips.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwCheckon.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwProjectInfo.hbm.xml"/>
+        <mapping resource="datura/sys/entity/WfPageCheckInfo.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwAllowGate.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysConfigAttachment.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysRoles.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysAdministrativeRegion.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwGate.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysModule.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysModuleRights.hbm.xml"/>
+        <mapping resource="datura/sys/entity/WfTest.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysModuleGroup.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysPersonalQualifications.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwGateUser.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysConfig.hbm.xml"/>
+        <mapping resource="datura/sys/entity/HelpContent.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysUsers.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwEnterHistory.hbm.xml"/>
+        <mapping resource="datura/sys/entity/HrPosition.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysDictionary.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysLocalResource.hbm.xml"/>
+        <mapping resource="datura/sys/entity/HrDepartment.hbm.xml"/>
+        <mapping resource="datura/sys/entity/HrEmployee.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwCondition.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwFingerprint.hbm.xml"/>
+        <mapping resource="datura/sys/entity/THwGateControl.hbm.xml"/>
+        <mapping resource="datura/sys/entity/WfFlowEntities.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysConfigItem.hbm.xml"/>
+        <mapping resource="datura/sys/entity/SysConfigCategory.hbm.xml"/>
+    </session-factory>
 </hibernate-configuration>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysAdministrativeRegion" table="Sys_AdministrativeRegion" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="regionCode" type="string">
+            <column name="RegionCode" length="50" not-null="true">
+                <comment>&#229;&#140;&#186;&#229;&#159;&#159;&#231;&#188;&#150;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+        <property name="regionName" type="string">
+            <column name="RegionName" length="50">
+                <comment>&#229;&#140;&#186;&#229;&#159;&#159;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="parentCode" type="string">
+            <column name="ParentCode" length="50">
+                <comment>&#228;&#184;&#138;&#231;&#186;&#167;&#229;&#140;&#186;&#229;&#159;&#159;&#231;&#188;&#150;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+        <property name="longitude" type="string">
+            <column name="Longitude" length="50">
+                <comment>&#231;&#187;&#143;&#229;&#186;&#166;</comment>
+            </column>
+        </property>
+        <property name="latitude" type="string">
+            <column name="Latitude" length="50">
+                <comment>&#231;&#186;&#172;&#229;&#186;&#166;</comment>
+            </column>
+        </property>
+        <property name="compatibleCode" type="string">
+            <column name="CompatibleCode" length="50">
+                <comment>
+                &#229;&#133;&#188;&#229;&#174;&#185;&#230;&#151;&#167;&#231;&#179;&#187;&#231;&#187;&#159;&#229;&#140;&#186;&#229;&#159;&#159;&#228;&#187;&#163;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

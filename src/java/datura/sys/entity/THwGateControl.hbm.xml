@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.THwGateControl" table="T_HW_GateControl" catalog="datura" optimistic-lock="version">
+        <id name="controlId" type="string">
+            <column name="ControlID" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="gateId" type="string">
+            <column name="GateID" length="36" not-null="true" />
+        </property>
+        <property name="controlKey" type="string">
+            <column name="ControlKey" length="50" not-null="true" />
+        </property>
+        <property name="controlNo" type="string">
+            <column name="ControlNo" length="50" not-null="true" />
+        </property>
+        <property name="controlLoc" type="string">
+            <column name="ControlLoc" length="65535" not-null="true" />
+        </property>
+        <property name="controlType" type="string">
+            <column name="ControlType" length="65535" not-null="true" />
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="Createtime" length="19" not-null="true" />
+        </property>
+        <property name="creator" type="string">
+            <column name="Creator" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

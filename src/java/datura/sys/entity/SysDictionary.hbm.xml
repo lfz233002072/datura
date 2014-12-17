@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysDictionary" table="Sys_Dictionary" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="description" type="string">
+            <column name="Description" />
+        </property>
+        <property name="rootId" type="string">
+            <column name="RootId" length="36">
+                <comment>&#232;&#183;&#159;ID</comment>
+            </column>
+        </property>
+        <property name="parentId" type="string">
+            <column name="ParentId" length="36">
+                <comment>&#231;&#136;&#182;ID</comment>
+            </column>
+        </property>
+        <property name="dataSort" type="java.lang.Integer">
+            <column name="DataSort">
+                <comment>&#230;&#142;&#146;&#229;&#186;&#143;</comment>
+            </column>
+        </property>
+        <property name="delFlag" type="java.lang.Byte">
+            <column name="DelFlag">
+                <comment>&#229;&#136;&#160;&#233;&#153;&#164;&#230;&#160;&#135;&#232;&#174;&#176; true
+                &#232;&#161;&#168;&#231;&#164;&#186;&#229;&#183;&#178;&#231;&#187;&#143;&#229;&#136;&#160;&#233;&#153;&#164;</comment>
+            </column>
+        </property>
+        <property name="visitLevel" type="java.lang.Integer">
+            <column name="VisitLevel">
+                <comment>&#232;&#174;&#191;&#233;&#151;&#174;&#229;&#177;&#130;&#230;&#172;&#161;</comment>
+            </column>
+        </property>
+        <property name="visitPath" type="string">
+            <column name="VisitPath" length="65535">
+                <comment>&#233;&#129;&#141;&#229;&#142;&#134;&#232;&#183;&#175;&#229;&#190;&#132;</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="Name">
+                <comment>&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="shortName" type="string">
+            <column name="ShortName">
+                <comment>&#231;&#174;&#128;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="code" type="string">
+            <column name="Code">
+                <comment>&#228;&#187;&#163;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+        <property name="ruleExpression" type="string">
+            <column name="RuleExpression" length="65535">
+                <comment>&#232;&#167;&#132;&#229;&#136;&#153;&#232;&#161;&#168;&#232;&#190;&#190;&#229;&#188;&#143;</comment>
+            </column>
+        </property>
+        <property name="customField1" type="java.lang.Integer">
+            <column name="CustomField1">
+                <comment>&#232;&#135;&#170;&#229;&#174;&#154;&#228;&#185;&#137;&#229;&#177;&#158;&#230;&#128;&#167;1</comment>
+            </column>
+        </property>
+        <property name="customField2" type="string">
+            <column name="CustomField2">
+                <comment>&#232;&#135;&#170;&#229;&#174;&#154;&#228;&#185;&#137;&#229;&#177;&#158;&#230;&#128;&#167;2</comment>
+            </column>
+        </property>
+        <property name="customField3" type="string">
+            <column name="CustomField3" length="65535">
+                <comment>&#232;&#135;&#170;&#229;&#174;&#154;&#228;&#185;&#137;&#229;&#177;&#158;&#230;&#128;&#167;3</comment>
+            </column>
+        </property>
+        <property name="hasChild" type="java.lang.Byte">
+            <column name="HasChild">
+                <comment>&#230;&#152;&#175;&#229;&#144;&#166;&#230;&#156;&#137;&#229;&#173;&#169;&#229;&#173;&#144;&#232;&#138;&#130;&#231;&#130;&#185;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

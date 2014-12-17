@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.THwProjectInfo" table="T_HW_ProjectInfo" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="ID" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="proCode" type="java.lang.Integer">
+            <column name="ProCode" />
+        </property>
+        <property name="proName" type="string">
+            <column name="ProName" length="200" not-null="true" />
+        </property>
+        <property name="roomName" type="string">
+            <column name="RoomName" length="50" not-null="true" />
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="StartTime" length="19" not-null="true" />
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="EndTime" length="19" />
+        </property>
+        <property name="projectState" type="java.lang.Integer">
+            <column name="ProjectState" />
+        </property>
+        <property name="company" type="string">
+            <column name="Company" length="200" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CreateDate" length="19" not-null="true" />
+        </property>
+        <property name="roomCode" type="string">
+            <column name="RoomCode" length="50" />
+        </property>
+        <property name="proCode2" type="string">
+            <column name="ProCode2" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

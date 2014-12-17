@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.THwCondition" table="T_HW_Condition" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="ID" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="proCode" type="java.lang.Integer">
+            <column name="ProCode" />
+        </property>
+        <property name="speciality" type="string">
+            <column name="Speciality" length="20" />
+        </property>
+        <property name="extractPersons" type="java.lang.Integer">
+            <column name="ExtractPersons" />
+        </property>
+        <property name="joinPersons" type="java.lang.Integer">
+            <column name="JoinPersons" />
+        </property>
+        <property name="actualPersons" type="java.lang.Integer">
+            <column name="ActualPersons" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CreateDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

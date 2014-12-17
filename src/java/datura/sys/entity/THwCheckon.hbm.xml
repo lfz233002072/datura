@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.THwCheckon" table="T_HW_Checkon" catalog="datura" optimistic-lock="version">
+        <id name="checkonId" type="string">
+            <column name="CheckonID" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="proId" type="string">
+            <column name="ProID" length="50" not-null="true" />
+        </property>
+        <property name="proNum" type="string">
+            <column name="ProNum" length="50" not-null="true" />
+        </property>
+        <property name="proName" type="string">
+            <column name="ProName" length="65535" not-null="true" />
+        </property>
+        <property name="proTime" type="timestamp">
+            <column name="ProTime" length="19" />
+        </property>
+        <property name="proRoom" type="string">
+            <column name="ProRoom" length="50" not-null="true" />
+        </property>
+        <property name="userNo" type="string">
+            <column name="UserNo" length="50" not-null="true" />
+        </property>
+        <property name="userId" type="string">
+            <column name="UserID" length="50" not-null="true" />
+        </property>
+        <property name="userName" type="string">
+            <column name="UserName" length="50" not-null="true" />
+        </property>
+        <property name="userCardId" type="string">
+            <column name="UserCardID" length="50" not-null="true" />
+        </property>
+        <property name="userTel" type="string">
+            <column name="UserTel" length="50" not-null="true" />
+        </property>
+        <property name="arriveTime" type="timestamp">
+            <column name="ArriveTime" length="19" />
+        </property>
+        <property name="userPhoto" type="binary">
+            <column name="UserPhoto" />
+        </property>
+        <property name="arrivePhoto" type="binary">
+            <column name="ArrivePhoto" />
+        </property>
+        <property name="isRight" type="int">
+            <column name="IsRIght" not-null="true" />
+        </property>
+        <property name="compareContent" type="string">
+            <column name="CompareContent" />
+        </property>
+        <property name="isCheckOn" type="int">
+            <column name="IsCheckOn" not-null="true" />
+        </property>
+        <property name="absenceReason" type="string">
+            <column name="AbsenceReason" />
+        </property>
+        <property name="content" type="string">
+            <column name="Content" />
+        </property>
+    </class>
+</hibernate-mapping>

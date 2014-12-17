@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysLogData" table="Sys_LogData" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="logId" type="string">
+            <column name="LogId" length="36">
+                <comment>&#230;&#151;&#165;&#229;&#191;&#151;ID</comment>
+            </column>
+        </property>
+        <property name="displayName" type="string">
+            <column name="DisplayName">
+                <comment>&#230;&#151;&#165;&#229;&#191;&#151;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="entityId" type="string">
+            <column name="EntityID">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#229;&#174;&#158;&#228;&#189;&#147;ID</comment>
+            </column>
+        </property>
+        <property name="tableDisplayName" type="string">
+            <column name="TableDisplayName">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#232;&#161;&#168;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="tableName" type="string">
+            <column name="TableName">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#232;&#161;&#168;&#229;&#144;&#141;</comment>
+            </column>
+        </property>
+        <property name="oldData" type="string">
+            <column name="OldData">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#229;&#137;&#141;&#230;&#149;&#176;&#230;&#141;&#174;</comment>
+            </column>
+        </property>
+        <property name="newData" type="string">
+            <column name="NewData">
+                <comment>&#228;&#191;&#174;&#230;&#148;&#185;&#229;&#144;&#142;&#230;&#149;&#176;&#230;&#141;&#174;</comment>
+            </column>
+        </property>
+        <property name="operationType" type="java.lang.Integer">
+            <column name="OperationType">
+                <comment>&#230;&#147;&#141;&#228;&#189;&#156;&#231;&#177;&#187;&#229;&#158;&#139; 0 &#229;&#162;&#158;&#229;&#138;&#160; 1 &#229;&#136;&#160;&#233;&#153;&#164; 2
+                &#228;&#191;&#174;&#230;&#148;&#185; 3 &#231;&#187;&#132;&#229;&#144;&#136;</comment>
+            </column>
+        </property>
+        <property name="assemblyQualifiedName" type="string">
+            <column name="AssemblyQualifiedName">
+                <comment>
+                &#229;&#174;&#158;&#228;&#189;&#147;&#229;&#175;&#185;&#229;&#186;&#148;&#231;&#154;&#132;&#231;&#177;&#187;&#229;&#158;&#139;&#229;&#133;&#168;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysModuleRights" table="Sys_ModuleRights" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="moduleId" type="string">
+            <column name="ModuleId" length="36" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" />
+        </property>
+        <property name="rightName" type="string">
+            <column name="RightName" />
+        </property>
+        <property name="rightValue" type="java.lang.Integer">
+            <column name="RightValue" />
+        </property>
+        <property name="rightType" type="java.lang.Integer">
+            <column name="RightType">
+                <comment>
+                0&#229;&#133;&#172;&#231;&#148;&#168;&#230;&#157;&#131;&#233;&#153;&#144;&#239;&#188;&#140;1&#230;&#152;&#175;&#229;&#143;&#175;&#228;&#187;&#165;&#232;&#162;&#171;&#229;&#136;&#134;&#233;&#133;&#141;&#231;&#154;&#132;&#239;&#188;&#140;99
+                &#229;&#133;&#182;&#229;&#174;&#131;</comment>
+            </column>
+        </property>
+        <property name="dataStatus" type="java.lang.Integer">
+            <column name="DataStatus">
+                <comment>
+                0:&#232;&#191;&#135;&#230;&#156;&#159;&#227;&#128;&#129;&#230;&#151;&#160;&#230;&#149;&#136;&#231;&#154;&#132;&#227;&#128;&#129;&#229;&#183;&#178;&#231;&#187;&#143;&#229;&#133;&#179;&#233;&#151;&#173;
+                1:&#230;&#156;&#137;&#230;&#149;&#136;&#227;&#128;&#129;&#230;&#173;&#163;&#229;&#156;&#168;&#228;&#189;&#191;&#231;&#148;&#168;&#227;&#128;&#129;&#229;&#183;&#178;&#231;&#187;&#143;&#229;&#188;&#128;&#229;&#144;&#175;
+                99:&#229;&#133;&#182;&#229;&#174;&#131;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CreateTime" length="19" />
+        </property>
+        <property name="createUserId" type="string">
+            <column name="CreateUserId" length="36" />
+        </property>
+        <property name="lastUpdateTime" type="timestamp">
+            <column name="LastUpdateTime" length="19" />
+        </property>
+        <property name="lastUpdateUserId" type="string">
+            <column name="LastUpdateUserId" length="36" />
+        </property>
+        <property name="groupId" type="string">
+            <column name="GroupId" length="36" />
+        </property>
+    </class>
+</hibernate-mapping>

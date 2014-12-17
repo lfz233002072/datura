@@ -14,6 +14,7 @@ import datura.dao.HibernateBasicDao;
 import datura.dao.IBasicDao;
 import datura.entity.PageOfRecords;
 import datura.service.BasicService;
+import datura.sys.dao.*;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -30,16 +31,16 @@ import java.util.logging.Logger;
  */
 public class UserInfoServiceImp extends BasicService<SysUsers, String> implements UserInfoService {
 
-    private HibernateBasicDao<SysUsers, String> userDao;
+    private SysUserDao userDao;
 
     public UserInfoServiceImp() {
-        super(new HibernateBasicDao());
+        super(new SysUserDao());
     }
 
     @Override
     public UserInfo GetUserInfoByUserName(String username) {
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("Username", username);
+        equalFields.put("username", username);
         SysUsers temp = get(equalFields);
         UserInfo userInfo = null;
         if (temp != null) {
@@ -51,30 +52,30 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
             return null;
         }
 
-        HibernateBasicDao<SysRoles, String> roleDao = new HibernateBasicDao<SysRoles, String>();
-        String sql = "WHERE EXISTS(\n"
-                + "	SELECT RoleId FROM Sys_UserRoleRelationShips WHERE userid='%1$s'\n"
-                + "	UNION ALL\n"
-                + "	SELECT RoleId FROM Hr_PositionRoleRelationShips \n"
-                + "	WHERE EXISTS(\n"
-                + "		SELECT * FROM Hr_DepartmentPosition AS DP\n"
-                + "		INNER JOIN Hr_Employee AS EMP ON DP.ID=EMP.DepartmentPositionId WHERE EMP.userid='%1$s'))";
-        sql = String.format(sql, userInfo.getUserId());
-
-        List<SysRoles> list = roleDao.findResultList(null, null, null, null, null, sql);
-
-        int i = 0;
-        while (i < list.size()) {
-            SysRoles result = list.get(i);
-            UserRole tempVar2 = new UserRole();
-            tempVar2.setName(result.getName());
-            tempVar2.setId(result.getId());
-            tempVar2.setActive(result.getActive() == 0 ? false : true);
-            tempVar2.setAreaCode(result.getAreaCode());
-            tempVar2.setDescription(result.getDescription());
-            tempVar2.setExtCode(result.getExtCode());
-            userInfo.getRoles().add(tempVar2);
-        }
+//        SysRolesDao roleDao = new SysRolesDao();
+//        String sql = "WHERE EXISTS(\n"
+//                + "	SELECT RoleId FROM Sys_UserRoleRelationShips WHERE userid='%1$s'\n"
+//                + "	UNION ALL\n"
+//                + "	SELECT RoleId FROM Hr_PositionRoleRelationShips \n"
+//                + "	WHERE EXISTS(\n"
+//                + "		SELECT * FROM Hr_DepartmentPosition AS DP\n"
+//                + "		INNER JOIN Hr_Employee AS EMP ON DP.ID=EMP.DepartmentPositionId WHERE EMP.userid='%1$s'))";
+//        sql = String.format(sql, userInfo.getUserId());
+//
+//        List<SysRoles> list = roleDao.findResultList(null, null, null, null, null, sql);
+//
+//        int i = 0;
+//        while (i < list.size()) {
+//            SysRoles result = list.get(i);
+//            UserRole tempVar2 = new UserRole();
+//            tempVar2.setName(result.getName());
+//            tempVar2.setId(result.getId());
+//            tempVar2.setActive(result.getActive() == 0 ? false : true);
+//            tempVar2.setAreaCode(result.getAreaCode());
+//            tempVar2.setDescription(result.getDescription());
+//            tempVar2.setExtCode(result.getExtCode());
+//            userInfo.getRoles().add(tempVar2);
+//        }
         //获取通用权限
 //            sql = "SELECT MR.Id ModuleRightsId, mr.RightValue,g.EnglishName GroupName,m.EnglishName ModuleName,G.Id GroupId,M.Id Moduleid \n"
 //                    + "FROM Sys_ModuleRights AS MR INNER JOIN Sys_Module AS M ON MR.ModuleId=M.Id INNER JOIN Sys_ModuleGroup AS G ON M.GroupId=G.Id\n"
@@ -130,7 +131,7 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
     public UserInfo Login(String userName, String password
     ) {
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("Username", userName);
+        equalFields.put("username", userName);
         equalFields.put("password", password);
         SysUsers temp = get(equalFields);
         UserInfo userInfo = null;
@@ -155,7 +156,7 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
     public String GetUserNameById(String id
     ) {
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("Id", id); 
+        equalFields.put("id", id); 
         SysUsers temp = get(equalFields); 
         if (temp != null) {
            return temp.getUsername();
@@ -168,7 +169,7 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
     public void UpdateLastActivityInfo(String id, Date lastActivityDate, String lastActivityIp
     ) { 
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("Id", id); 
+        equalFields.put("id", id); 
         SysUsers temp = get(equalFields); 
         if(temp!=null){
             temp.setLastActivityDate(lastActivityDate);
@@ -181,7 +182,7 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
     public void UpdateLoginTimes(String id
     ) { 
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("Id", id); 
+        equalFields.put("id", id); 
         SysUsers temp = get(equalFields); 
         if(temp!=null){ 
             temp.setLoginTimes(temp.getLoginTimes()+1);
@@ -200,7 +201,7 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
     ) {
         
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("Id", userid); 
+        equalFields.put("id", userid); 
         SysUsers temp = get(equalFields); 
         if (temp != null) {
            return temp.getUsername();

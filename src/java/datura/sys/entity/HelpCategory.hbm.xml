@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.HelpCategory" table="HelpCategory" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="categoryName" type="string">
+            <column name="CategoryName">
+                <comment>&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="url" type="string">
+            <column name="Url">
+                <comment>&#232;&#174;&#191;&#233;&#151;&#174;&#229;&#156;&#176;&#229;&#157;&#128;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="Title">
+                <comment>&#230;&#160;&#135;&#233;&#162;&#152;</comment>
+            </column>
+        </property>
+        <property name="shortDescrption" type="string">
+            <column name="ShortDescrption" length="65535">
+                <comment>&#231;&#174;&#128;&#229;&#141;&#149;&#232;&#175;&#180;&#230;&#152;&#142;</comment>
+            </column>
+        </property>
+        <property name="descrption" type="string">
+            <column name="Descrption">
+                <comment>&#232;&#175;&#166;&#231;&#187;&#134;&#232;&#175;&#180;&#230;&#152;&#142;</comment>
+            </column>
+        </property>
+        <property name="icon" type="string">
+            <column name="ICON" length="50">
+                <comment>&#229;&#155;&#190;&#230;&#160;&#135;</comment>
+            </column>
+        </property>
+        <property name="dataSort" type="java.lang.Integer">
+            <column name="DataSort" />
+        </property>
+        <property name="parentId" type="string">
+            <column name="ParentId" length="36">
+                <comment>&#231;&#136;&#182;&#231;&#177;&#187;&#229;&#136;&#171;ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

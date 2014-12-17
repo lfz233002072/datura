@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.HrDepartmentPosition" table="Hr_DepartmentPosition" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="positionId" type="string">
+            <column name="PositionId" length="36">
+                <comment>&#229;&#178;&#151;&#228;&#189;&#141;ID</comment>
+            </column>
+        </property>
+        <property name="departmentId" type="string">
+            <column name="DepartmentId" length="36">
+                <comment>&#233;&#131;&#168;&#233;&#151;&#168;ID</comment>
+            </column>
+        </property>
+        <property name="immediateSuperiorId" type="string">
+            <column name="ImmediateSuperiorId" length="36">
+                <comment>&#231;&#155;&#180;&#230;&#142;&#165;&#228;&#184;&#138;&#231;&#186;&#167;&#233;&#131;&#168;&#233;&#151;&#168;ID</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CreateTime" length="19">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="createUserId" type="string">
+            <column name="CreateUserId" length="36">
+                <comment>&#229;&#136;&#155;&#229;&#187;&#186;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateTime" type="timestamp">
+            <column name="LastUpdateTime" length="19">
+                <comment>&#230;&#156;&#128;&#229;&#144;&#142;&#230;&#155;&#180;&#230;&#150;&#176;&#230;&#151;&#182;&#233;&#151;&#180;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateUserId" type="string">
+            <column name="LastUpdateUserId" length="36">
+                <comment>&#230;&#156;&#128;&#229;&#144;&#142;&#230;&#155;&#180;&#230;&#150;&#176;&#228;&#186;&#186;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

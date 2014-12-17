@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.SysRoles" table="Sys_Roles" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" />
+        </property>
+        <property name="isSystemRole" type="java.lang.Byte">
+            <column name="IsSystemRole">
+                <comment>&#230;&#152;&#175;&#229;&#144;&#166;&#231;&#179;&#187;&#231;&#187;&#159;&#232;&#167;&#146;&#232;&#137;&#178;</comment>
+            </column>
+        </property>
+        <property name="systemName" type="string">
+            <column name="SystemName">
+                <comment>&#231;&#179;&#187;&#231;&#187;&#159;&#229;&#144;&#141;&#231;&#167;&#176;</comment>
+            </column>
+        </property>
+        <property name="active" type="java.lang.Byte">
+            <column name="Active">
+                <comment>&#230;&#152;&#175;&#229;&#144;&#166;&#230;&#191;&#128;&#230;&#180;&#187;</comment>
+            </column>
+        </property>
+        <property name="areaCode" type="string">
+            <column name="AreaCode">
+                <comment>&#229;&#189;&#146;&#229;&#177;&#158;&#229;&#140;&#186;&#229;&#159;&#159;</comment>
+            </column>
+        </property>
+        <property name="extCode" type="string">
+            <column name="ExtCode" length="65535">
+                <comment>&#232;&#167;&#146;&#232;&#137;&#178;&#230;&#137;&#169;&#229;&#177;&#149;&#228;&#187;&#163;&#231;&#160;&#129;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

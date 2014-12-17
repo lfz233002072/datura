@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-12-17 22:28:20 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="datura.sys.entity.WfTest" table="WF_Test" catalog="datura" optimistic-lock="version">
+        <id name="id" type="string">
+            <column name="Id" length="36" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" length="65535" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CreateDate" length="19" />
+        </property>
+        <property name="flowStep" type="string">
+            <column name="FlowStep" />
+        </property>
+    </class>
+</hibernate-mapping>
