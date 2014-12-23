@@ -1,14 +1,16 @@
 <%-- 
-    Document   : home
-    Created on : 2014-11-11, 18:43:37
+    Document   : modulegourp
+    Created on : 2014-11-15, 15:56:13
     Author     : lfz
---%> 
+--%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="header.jsp" %> 
+<%@include  file="../header.jsp" %>
+
 <div class="toolbar">
+    
     <span class="fl"> 
         <h2 style="padding-left: 15px; padding-top: 10px;">
-            首页</h2>
+           模块组管理</h2>
     </span><span class="fr search"> 
     </span>
 </div>
@@ -32,4 +34,4 @@
     </table>
 </div>  
 
-<%@include  file="footer.jsp" %>
+<%@include  file="../footer.jsp" %>

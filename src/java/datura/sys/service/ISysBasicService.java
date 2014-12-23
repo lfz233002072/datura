@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package datura.service;
+package datura.sys.service;
+
+import datura.service.IMenuService;
 
 public interface ISysBasicService extends IMenuService {
 

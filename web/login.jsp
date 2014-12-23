@@ -22,15 +22,71 @@
             <img alt="抱歉，请开启脚本支持！" src="<%=path%>/assets/images/noscript.gif"/>
         </div>
         </noscript> 
-        <div id="loginwrapper"  >
-            <h2 class="title"> 
-                <s:text name="loginPage" />
-            </h2>
-            <s:form action="login" > 
-                <s:textfield name="username" required="true" label="%{getText('user')}"></s:textfield> 
-                <s:textfield name="password" required="true"  label="%{getText('pass')}"></s:textfield>
-                <s:submit value="%{getText('login')}" cssStyle="width:120px;" cssClass="login"></s:submit>  
-            </s:form>
-        </div>  
+        <div style="margin: 0 auto; margin-top: 100px; width: 800px;">
+            <table style="width: 800px; margin: 0 auto;">
+                <tr>
+                    <td><img src="/Content/Images/account.jpg"></td>
+                    <td style="width: 310px;">
+                        <form action="<%=path%>/login.do" method="POST">
+                        <table id="LoginTb" style="margin-top: 10px; background: #fff; width: 100%; height: 230px; border: 1px #ccc solid;">
+                            <tr>
+                                <td colspan="2" style="font-size: 18px;  font-weight: bold; padding: 5px 20px;">
+                                    <s:text name="loginPage" />
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="width: 80px; text-align: right"><s:text name="user" />
+                                </td>
+                                <td>
+                                    <input id="username" name="username" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 80px; text-align: right;"><s:text name="pass" />
+                                </td>
+                                <td>
+                                    <input id="password" name="password" type="password" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="width: 80px; text-align: right">验证码：
+                                </td>
+                                <td>
+
+                                </td>
+                            </tr>
+
+
+                            <tr>
+
+                                <td colspan="2">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td style="width:40px;">&nbsp;</td>
+                                            <td>
+                                                <div id="mes" class="field-validation-error">
+                                                </div>
+                                                <div id="Loading" style="display: none" class='panel-loading'><font color='#000'>加载中...</font></div>
+                                            </td>
+                                            <td style="width: 100px;">
+                                              
+                                                <button type="submit" >登录</button>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                </td>
+                            </tr>
+
+                        </table>
+                                </form>
+                    </td>
+                </tr>
+            </table>
+
+        </div> 
     </body>
 </html>

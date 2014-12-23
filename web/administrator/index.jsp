@@ -52,7 +52,7 @@
                 <a href="<%=path%>/logout" >退出</a>
             </div>
             <div class="logo-bg">
-                <a class="logo" style="background: url('')" href="javascript:void(0);"></a>
+                <a class="logo" style="background: url('<%=path%>/content/themes/green/images/tab.gif')" href="javascript:void(0);"></a>
             </div>
         </div>
         <div region="south" border="false" split="false">
@@ -86,7 +86,7 @@
             <div id="frameworkTabs" class="easyui-tabs" plain="true" scrollincrement="112" fit="true"
                  border="false" style="overflow: hidden;">
                 <div title="首页" iconcls="home-icon" style="overflow: hidden;">
-                    <iframe scrolling="auto" frameborder="0" style="width:100%;height:100%;" src="<%=path%>/admin/home.jsp" name="iFrameHome" id="iFrameHome">
+                    <iframe scrolling="auto" frameborder="0" style="width:100%;height:100%;" src="<%=path%>/administrator/home.jsp" name="iFrameHome" id="iFrameHome">
                     </iframe>
                 </div>
             </div>

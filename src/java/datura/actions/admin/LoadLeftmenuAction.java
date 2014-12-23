@@ -3,35 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package datura.controllers.admin;
+package datura.actions.admin;
 
-import datura.security.UserInfo;
+import com.opensymphony.xwork2.ActionSupport;
 import datura.Utils;
-import datura.controllers.AdminServletBase;
 import datura.enums.TreeLevel;
 import datura.models.AdminIndexModel;
 import datura.models.AdminMenuModel;
 import datura.models.Sys_ModuleGroup;
-import datura.service.SysBasicServiceImp;
-import java.io.IOException;
+import datura.security.UserInfo;
+import datura.sys.service.SysBasicServiceImp;
 import java.util.ArrayList;
 import java.util.List;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.apache.struts2.ServletActionContext;
 
 /**
  *
  * @author lfz
  */
-@WebServlet(name = "Admin_LoadleftmenuServlet", urlPatterns = {"/admin/loadleftmenu"})
-public class LoadleftmenuServlet extends AdminServletBase {
-    
+public class LoadLeftmenuAction extends ActionSupport {
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public String execute() throws Exception {
+        HttpServletRequest req = ServletActionContext.getRequest();
+        HttpServletResponse resp = ServletActionContext.getResponse();
         resp.setHeader("Content-type", "text/html;charset=UTF-8");
         UserInfo userInfo = (UserInfo) req.getSession().getAttribute("user");
         if (userInfo == null) {
@@ -40,11 +37,10 @@ public class LoadleftmenuServlet extends AdminServletBase {
         String groupid = req.getParameter("groupid");
         SysBasicServiceImp sysService = new SysBasicServiceImp();
         int pathUnit = 3;
-        AdminIndexModel indexModel = new AdminIndexModel();
-        
+        AdminIndexModel indexModel = new AdminIndexModel(); 
         //头部菜单构建
-        List<Sys_ModuleGroup> topGroupList= new ArrayList<>();
-        indexModel.setModuleGroups(topGroupList); 
+        List<Sys_ModuleGroup> topGroupList = new ArrayList<>();
+        indexModel.setModuleGroups(topGroupList);
         indexModel.setCurrentGroupId(groupid);
         List<Sys_ModuleGroup> menuGroupList = sysService.GetModuleGroups(userInfo.getUserId(), groupid,
                 TreeLevel.Two, userInfo.getIsSupperAdmin(), pathUnit);
@@ -59,8 +55,7 @@ public class LoadleftmenuServlet extends AdminServletBase {
         }
         indexModel.setMenuModels(menuItems);
         indexModel.setLoginInfo(userInfo.getRealname());
-        req.setAttribute("indexModel", indexModel);  
-        this.RenderView(req, resp,"/admin/menu.jsp");
+        req.setAttribute("indexModel", indexModel);
+        return SUCCESS;
     }
-    
 }

@@ -7,5 +7,11 @@
         <action name="index" class="datura.actions.admin.IndexAction"> 
             <result name="success">/administrator/index.jsp</result>
         </action>
+         <action name="loadleftmenu" class="datura.actions.admin.LoadLeftmenuAction"> 
+            <result name="success">/administrator/menu.jsp</result>
+        </action> 
+         <action name="*_*" class="datura.actions.admin.{1}Action" method="{2}"> 
+            <result name="success">/administrator/{1}/{2}.jsp</result>
+        </action>
     </package>
 </struts>

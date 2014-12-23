@@ -1,0 +1,346 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2014-12-23, 21:32:53
+    Author     : lfz
+*/
+ul,li,a,input,div,span{ outline:none;}
+
+label
+{
+	font-family: 微软雅黑;
+	font-size: 13px;
+}
+a
+{
+	cursor: pointer;
+	color: #2897dd;
+	text-decoration:none;
+}
+a:hover
+{
+	color: red;
+}
+.moreInfo
+{
+	font-size: 13px;
+	text-decoration: underline;
+}
+/*通用*/
+.hide
+{
+	display: none;
+}
+
+.combo-p  .panel-body
+{
+    border:1px solid #c8c8c8;
+}
+/*列表页面主体部分样式*/
+.main_body
+{
+	width: 790px;
+    margin-left: 10px;
+    margin-bottom: 15px;	
+}
+/*编辑页面样式*/
+.main_form
+{
+	width: 595px;
+	padding-bottom:60px;
+	border: 1px solid #cccccc; 
+	background: #fff; 
+	margin:0;
+	margin-bottom:10px;
+}
+.main_form p
+{
+	padding: 2px 0 2px 0;
+	margin:10px 0;
+	*margin:8px 0;
+}
+.main_form p .label
+{
+	width: 100px;
+	font-family:宋体;
+}
+.main_form  .combo
+{
+	border:0 none;
+    border-bottom: 1px solid  #9c9c9c;
+}
+.main_form  .combo-text
+{
+	border-right: 0;
+	border-bottom: 1px solid  #9c9c9c;
+}
+.main_form .combo-arrow
+{
+    opacity:1.0;
+    filter:alpha(opacity=100);
+}
+.main_form .checkbox
+{
+	margin-left:15px;
+}
+
+.main_form .checkbox2
+{
+	margin-left:30px;
+}
+
+.main_form .checkbox3
+{
+	margin-left:120px;
+}
+.label
+{
+	width: 110px;
+	text-align: right;
+	display: inline-block;
+	white-space:nowrap;
+}
+.select
+{
+	width: 167px;
+}
+
+/*时间输入框*/
+.dateinput
+{
+	width:15px;
+	height:15px;
+	display:inline-block;
+	margin-left:-27px; 
+	margin-right:7px;
+	/*background: url('/App_Resource/Images/Icons/date.png') no-repeat;*/
+	border:none;
+	cursor:pointer;
+}
+/*单横线输入框*/
+.lineinput
+{
+	border-color: #ffffff #ffffff #9c9c9c;
+	border-style: solid;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: 1px;
+	border-left-width: thin;
+	background-color: #ffffff;
+	font-size: 12px;
+	vertical-align: middle;
+	width: 165px;
+}
+.long
+{
+	width:450px;
+}
+.searchinput
+{
+	border: 1px solid lightgray;
+	padding:1px 3px 1px 3px;
+	background-color: White;
+	height: 20px;
+	line-height: 20px;
+	width: 154px;
+	font-size: 13px;
+	font-family:微软雅黑;
+	line-height: 20px;
+}
+.searchinput:hover
+{
+	border: 1px solid #999999;
+}
+
+.closeicon
+{
+	font-weight: bolder;
+	color: #B7B7B7;
+	text-decoration: none;
+}
+.closeicon:hover
+{
+	color: #5B5B5B;
+}
+
+.dropdown
+{
+	color: #5B5B5B;
+	background-color: #EDEDED;
+	border: 1px solid #B7B7B7;
+	cursor: pointer;
+}
+.dropdown:hover
+{
+	border: 1px solid #999999;
+}
+
+.buttonDate
+{
+	width: 50px;
+	height: 30px;
+	border-top: 1px solid #9D9D9D;
+	border-bottom: 1px solid #9D9D9D;
+	border-left: 1px solid #9D9D9D;
+	border-right: 0;
+	background-color: #dcdcdc;
+	cursor: pointer;
+}
+.buttonDate:hover
+{
+	background-color: #eaeaea;
+}
+.buttonDateOn
+{
+	width: 50px;
+	height: 30px;
+	border-top: 1px solid #9D9D9D;
+	border-bottom: 1px solid #9D9D9D;
+	border-left: 1px solid #9D9D9D;
+	background-color: #3c3c3c;
+	cursor: pointer;
+	color: White;
+}
+
+.buttonReport
+{
+	background-color: #41a5e2;
+	cursor: pointer;
+	color:White;
+	width:58px;
+	height:24px;
+	border:0 none;
+	border-radius:2px;
+}
+
+/*列表样式*/
+.TableView
+{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #c8c8c8;
+	border-bottom: 0;
+	border-right: 0;
+}
+.TableView thead
+{
+	background:#f3f3f3;
+}
+.TableView thead td
+{
+	padding: 4px; 
+}
+.TableView td
+{
+	text-align: center;
+	border-right: 1px solid #c8c8c8;
+	border-bottom: 1px solid #c8c8c8;
+	font-size: 12px;
+	color: #555555;
+	padding: 8px; 
+}
+.TableView tbody tr:hover
+{
+	background-color:#eeeeee;
+}
+
+/*编辑页面的列表*/
+.InnerTable
+{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border-top: 2px solid #555555;
+	border-bottom: 1px solid #555555;
+}
+.InnerTable td
+{
+	border-left: 1px solid #555555;
+	border-bottom: 1px solid #555555;
+	font-size: 12px;
+	padding: 6px; 
+	text-align:center;
+}
+.InnerTable tr td:first-child
+{
+	border-left: 0;
+}
+
+.divHeader
+{
+	width:92%;
+	margin:15px auto 10px auto;
+}
+.title
+{
+	font-size:18px; 
+	font-weight:600; 
+	text-align:center;
+	margin:30px 0 1px 0; /*For ALL*/
+    *margin:15px 0 1px 0; /*For IE*/
+}
+.title2
+{
+	font-size:15px; 
+	font-weight:600; 
+	margin-bottom:1px;
+}
+/*工具栏*/
+.toolbar
+{
+	height: 28px; 
+	background: url('/App_Resource/Images/HomePage/底色.png') repeat-x; 
+	border: 0 none;
+    border-bottom: 1px solid #B7B7B7; 
+    overflow:hidden;
+    margin:0;
+    padding:3px 5px 0px 5px;
+}
+.savemap
+{
+	position: absolute;
+	top: 250px;
+	left: 10px;
+	width: 50px;
+	height: 70px;
+	border: none;
+	background-color: White;
+	cursor: pointer;
+	background-image: url(/App_Resource/Images/MapProject/SaveMap.gif);
+	z-index: 98;
+	padding: 0px;
+}
+
+.linkCount
+{
+	text-decoration: none;
+    outline: none;
+}
+.linkCount:hover
+{
+	text-decoration: underline;
+}
+.Green
+{
+	color:Green;
+}
+.Red
+{
+	color:Red;
+}
+
+
+.NoInfo
+{
+	display:none;
+	margin:10px auto 10px auto;
+	padding:4px 0 4px 0;
+	color: rgb(90,90,90);
+	border:solid 2px lightgray;
+	text-align:center;
+	width:220px;
+}

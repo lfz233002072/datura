@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package datura.service;
+package datura.sys.service;
 
 import datura.sys.service.UserInfoServiceImp;
 import datura.DBHelper;
 import static datura.DBHelper.getConnection;
+import datura.dao.SysHibernateUtil;
 import datura.enums.TreeLevel;
 import datura.models.*;
+import datura.sys.entity.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +19,8 @@ import java.sql.SQLException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 
 /**
  *
@@ -53,33 +57,36 @@ public class SysBasicServiceImp implements ISysBasicService {
      * @return
      */
     public final List<Sys_ModuleGroup> GetModuleGroups(String userId, String parentGroupId, TreeLevel groupLevel, boolean isSupperAdmin, int pathUnit) {
-        List<Sys_ModuleGroup> list = new ArrayList<>();
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet result = null;
+
+        Session session = SysHibernateUtil.getSessionFactory().openSession();
+        List<Sys_ModuleGroup> list = new ArrayList<>(); 
         try {
-            conn = getConnection();
-            pstmt = conn.prepareStatement("{ call up_Sys_GetModuleGroups(?,?,?,?,?)}");
-            pstmt.setString(1, userId);
-            pstmt.setString(2, parentGroupId);
-            pstmt.setInt(3, pathUnit);
-            pstmt.setInt(4, groupLevel.getValue());
-            pstmt.setInt(5, isSupperAdmin ? 1 : 0);
-            result = pstmt.executeQuery();
-            while (result.next()) {
+
+            SQLQuery query = session.createSQLQuery("{ call up_Sys_GetModuleGroups(?,?,?,?,?)}").addEntity(SysModuleGroup.class);
+             
+            query.setString(0, userId);
+            query.setString(1, parentGroupId);
+            query.setInteger(2, pathUnit);
+            query.setInteger(3, groupLevel.getValue());
+            query.setInteger(4, isSupperAdmin ? 1 : 0); 
+            List<SysModuleGroup> result =  query.list();
+            int i=0;
+            while (i<result.size()) {
+                SysModuleGroup temp =result.get(i);
                 Sys_ModuleGroup tempVar = new Sys_ModuleGroup();
-                tempVar.setId(result.getString("Id"));
-                tempVar.setDescription(result.getString("Description"));
-                tempVar.setDisplayName(result.getString("DisplayName"));
-                tempVar.setEnglishName(result.getString("EnglishName"));
-                tempVar.setImgUrl(result.getString("ImgUrl"));
-                list.add(tempVar); 
+                tempVar.setId(temp.getId());
+                tempVar.setDescription(temp.getDescription());
+                tempVar.setDisplayName(temp.getDisplayName());
+                tempVar.setEnglishName(temp.getEnglishName());
+                tempVar.setImgUrl(temp.getImgUrl());
+                list.add(tempVar);
+                i++;
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             System.out.println("GetModuleGroups: ex " + ex.getMessage());
             Logger.getLogger(UserInfoServiceImp.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            DBHelper.free(result, pstmt, conn);
+            session.close();
         }
         return list;
     }
@@ -93,34 +100,34 @@ public class SysBasicServiceImp implements ISysBasicService {
      * @return
      */
     public final List<Sys_Module> GetModules(String userId, String groupId, Boolean isSupperAdmin) {
-        List<Sys_Module> list = new ArrayList<>();
-        Connection conn = null;
-        PreparedStatement pstmt = null;
-        ResultSet result = null;
+        List<Sys_Module> list = new ArrayList<>(); 
+        Session session = SysHibernateUtil.getSessionFactory().openSession();
         try {
-            conn = getConnection();
-            pstmt = conn.prepareStatement("{ call up_Sys_GetModules(?,?,?)}");
-            pstmt.setString(1, userId);
-            pstmt.setString(2, groupId);
-            pstmt.setBoolean(3, isSupperAdmin);
-            result = pstmt.executeQuery();
-            while (result.next()) {
+           SQLQuery query = session.createSQLQuery("{ call up_Sys_GetModules(?,?,?)}").addEntity(SysModule.class);
+             
+            query.setString(0, userId);
+            query.setString(1, groupId);
+            query.setBoolean(2, isSupperAdmin);
+            List<SysModule> result =  query.list();
+            int i=0;
+            while (i<result.size()) {
+                SysModule temp =result.get(i);
                 Sys_Module tempVar = new Sys_Module();
-                tempVar.setDataSort(result.getInt("DataSort"));
-                tempVar.setId(result.getString("Id"));
-                tempVar.setDescription(result.getString("Description"));
-                tempVar.setDisplayName(result.getString("DisplayName"));
-                tempVar.setEnglishName(result.getString("EnglishName"));
-                tempVar.setImgUrl(result.getString("ImgUrl"));
-                tempVar.setGroupId(result.getString("GroupId"));
-                tempVar.setUrl(result.getString("Url"));
+                tempVar.setDataSort(temp.getDataSort());
+                tempVar.setId(temp.getId());
+                tempVar.setDescription(temp.getDescription());
+                tempVar.setDisplayName(temp.getDisplayName());
+                tempVar.setEnglishName(temp.getEnglishName());
+                tempVar.setImgUrl(temp.getImgUrl());
+                tempVar.setGroupId(temp.getGroupId());
+                tempVar.setUrl(temp.getUrl());
                 list.add(tempVar);
-            }
-            result.close();
-        } catch (SQLException ex) {
+                i++;
+            } 
+        } catch (Exception ex) {
             Logger.getLogger(UserInfoServiceImp.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            DBHelper.free(result, pstmt, conn);
+            session.close();
         }
         return list;
     }

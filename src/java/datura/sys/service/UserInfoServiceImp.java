@@ -52,30 +52,26 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
             return null;
         }
 
-//        SysRolesDao roleDao = new SysRolesDao();
-//        String sql = "WHERE EXISTS(\n"
-//                + "	SELECT RoleId FROM Sys_UserRoleRelationShips WHERE userid='%1$s'\n"
-//                + "	UNION ALL\n"
-//                + "	SELECT RoleId FROM Hr_PositionRoleRelationShips \n"
-//                + "	WHERE EXISTS(\n"
-//                + "		SELECT * FROM Hr_DepartmentPosition AS DP\n"
-//                + "		INNER JOIN Hr_Employee AS EMP ON DP.ID=EMP.DepartmentPositionId WHERE EMP.userid='%1$s'))";
-//        sql = String.format(sql, userInfo.getUserId());
-//
-//        List<SysRoles> list = roleDao.findResultList(null, null, null, null, null, sql);
-//
-//        int i = 0;
-//        while (i < list.size()) {
-//            SysRoles result = list.get(i);
-//            UserRole tempVar2 = new UserRole();
-//            tempVar2.setName(result.getName());
-//            tempVar2.setId(result.getId());
-//            tempVar2.setActive(result.getActive() == 0 ? false : true);
-//            tempVar2.setAreaCode(result.getAreaCode());
-//            tempVar2.setDescription(result.getDescription());
-//            tempVar2.setExtCode(result.getExtCode());
-//            userInfo.getRoles().add(tempVar2);
-//        }
+        SysRolesDao roleDao = new SysRolesDao();
+        String sql = "WHERE EXISTS(\n"
+                + "	SELECT 1 FROM SysUserRoleRelationShips as s WHERE userid='%1$s' and s.roleId =o.id)";
+        sql = String.format(sql, userInfo.getUserId());
+
+        List<SysRoles> list = roleDao.findResultList(null, null, null, null, null, sql);
+
+        int i = 0;
+        while (i < list.size()) {
+            SysRoles result = list.get(i);
+            UserRole tempVar2 = new UserRole();
+            tempVar2.setName(result.getName());
+            tempVar2.setId(result.getId());
+            tempVar2.setActive(result.getActive() == 0 ? false : true);
+            tempVar2.setAreaCode(result.getAreaCode());
+            tempVar2.setDescription(result.getDescription());
+            tempVar2.setExtCode(result.getExtCode());
+            userInfo.getRoles().add(tempVar2);
+            i++;
+        }
         //获取通用权限
 //            sql = "SELECT MR.Id ModuleRightsId, mr.RightValue,g.EnglishName GroupName,m.EnglishName ModuleName,G.Id GroupId,M.Id Moduleid \n"
 //                    + "FROM Sys_ModuleRights AS MR INNER JOIN Sys_Module AS M ON MR.ModuleId=M.Id INNER JOIN Sys_ModuleGroup AS G ON M.GroupId=G.Id\n"
@@ -123,7 +119,19 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
 //                    role.getPermissionRecords().add(tempVar4);
 //                }
 //            }
-
+/*  select o from datura.sys.entity.SysRoles as o 
+         WHERE EXISTS( 
+                SELECT roleId FROM datura.sys.entity.SysUserRoleRelationShips 
+                    WHERE userid='58FC7E03-A393-47AE-BBA3-46853AC8BCBE' 
+                UNION ALL 
+                SELECT roleId FROM datura.sys.entity.HrPositionRoleRelationShips 
+                    WHERE EXISTS( 
+                            SELECT * FROM datura.sys.entity.HrDepartmentPosition AS DP 
+                            INNER JOIN HrEmployee AS EMP ON DP.ID=EMP.departmentPositionId 
+                            WHERE EMP.userid='58FC7E03-A393-47AE-BBA3-46853AC8BCBE')
+        )
+       
+         */
         return userInfo;
     }
 
@@ -149,29 +157,29 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
     @Override
     public void DeleteUser(String userId
     ) {
-         this.delete(userId);
+        this.delete(userId);
     }
 
     @Override
     public String GetUserNameById(String id
     ) {
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("id", id); 
-        SysUsers temp = get(equalFields); 
+        equalFields.put("id", id);
+        SysUsers temp = get(equalFields);
         if (temp != null) {
-           return temp.getUsername();
+            return temp.getUsername();
         } else {
             return "";
-        }  
+        }
     }
 
     @Override
     public void UpdateLastActivityInfo(String id, Date lastActivityDate, String lastActivityIp
-    ) { 
+    ) {
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("id", id); 
-        SysUsers temp = get(equalFields); 
-        if(temp!=null){
+        equalFields.put("id", id);
+        SysUsers temp = get(equalFields);
+        if (temp != null) {
             temp.setLastActivityDate(lastActivityDate);
             temp.setLastIpAddress(lastActivityIp);
             this.update(temp);
@@ -180,12 +188,12 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
 
     @Override
     public void UpdateLoginTimes(String id
-    ) { 
+    ) {
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("id", id); 
-        SysUsers temp = get(equalFields); 
-        if(temp!=null){ 
-            temp.setLoginTimes(temp.getLoginTimes()+1);
+        equalFields.put("id", id);
+        SysUsers temp = get(equalFields);
+        if (temp != null) {
+            temp.setLoginTimes(temp.getLoginTimes() + 1);
             this.update(temp);
         }
     }
@@ -199,15 +207,15 @@ public class UserInfoServiceImp extends BasicService<SysUsers, String> implement
     @Override
     public String GerRealName(String userid
     ) {
-        
+
         LinkedHashMap<Object, Object> equalFields = new LinkedHashMap<Object, Object>();
-        equalFields.put("id", userid); 
-        SysUsers temp = get(equalFields); 
+        equalFields.put("id", userid);
+        SysUsers temp = get(equalFields);
         if (temp != null) {
-           return temp.getUsername();
+            return temp.getUsername();
         } else {
             return "";
-        }  
+        }
     }
 
 }

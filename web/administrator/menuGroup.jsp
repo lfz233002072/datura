@@ -13,7 +13,7 @@ String path = request.getContextPath();
             <c:if test="${itemStatus.count%3==1}">
                 <li>
             </c:if> 
-                    <a href="<%= path %>/admin/loadleftmenu?groupid=${item.id}" data-ajax-method="GET" data-ajax-url="<%= path %>/admin/loadleftmenu?groupid=${item.id}" data-ajax="true" groupId="${item.id}" 
+                    <a href="<%= path %>/administrator/loadleftmenu.do?groupid=${item.id}" data-ajax-method="GET" data-ajax-url="<%= path %>/administrator/loadleftmenu.do?groupid=${item.id}" data-ajax="true" groupId="${item.id}" 
                        data-ajax-update = "#dvTreeMenu" data-ajax-complete = "InitLeftMenu">
                     <img src="<%= path %>/content/images/menu/${item.englishName}.gif"/><span>${item.displayName}</span>  
                 </a>
